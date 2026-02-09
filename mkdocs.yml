@@ -1,0 +1,50 @@
+site_name: eSolutions Monitoring Plan
+site_description: Implementation Plan for eSolutions Monitoring Platform
+
+dev_addr: '127.0.0.1:8090'
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+  palette:
+    - scheme: default
+      primary: deep purple
+      accent: teal
+
+nav:
+  - Plan Overview: index.md
+  - 🚀 Getting Started: getting_started.md
+  - Implementation Methodology:
+      - Project Phases: implementation/overview.md
+      - Implementation Workflow: implementation/workflow.md
+      - Technology Stack: implementation/technology_stack.md
+      - Python Development Guide: implementation/python_guide.md
+      - Prerequisites: implementation/requirements.md
+  - Documentation Alignment:
+      - Tooling Overview: tooling/index.md
+      - Implementation Gap: tooling/implementation_gap.yaml
+  - Deployment Strategy:
+      - Unified Deployment Guide: deployment_guide.md
+      - Architecture Design: architecture/overview.md
+      - Enterprise Scaling: architecture/scaling.md
+      - Components: architecture/components.md
+      - OS Compatibility: architecture/compatibility.md
+  - Monitoring Scope:
+      - Maximo Metrics: monitoring/maximo.md
+      - Middleware (WAS): monitoring/websphere.md
+      - Infrastructure: monitoring/os.md
+      - Database (DB2): monitoring/db2.md
+  - Platform Configuration:
+      - Metric Definitions: platform_config/metrics.md
+      - Dashboards: platform_config/dashboards.md
+  - Custom Extensions:
+      - Scripts & Probes: custom_monitoring/scripts.md
+  - Operational Handover:
+      - Alerting Rules: operations/alerting.md
+      - Runbooks: operations/runbook.md
+  - Governance:
+      - Security Standards: security/hardening.md
+      - DR & Backup: maintenance/backup_dr.md

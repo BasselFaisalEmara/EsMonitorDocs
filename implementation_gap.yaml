@@ -1,0 +1,448 @@
+# eSolutions Monitoring Platform — Implementation Gap Tracker
+# Source of Truth: Documentation ↔ Code Alignment
+# Last Updated: 2026-02-07
+# Methodology: Every feature described in EsMonitorDocs/ was cross-referenced against EsMonitor/ codebase.
+
+features:
+
+  # ===== ARCHITECTURE =====
+  - id: ARCH-001
+    name: Core API Server
+    description: FastAPI-based REST API for metric ingestion and querying.
+    status: implemented
+    priority: critical
+    documentation_reference: architecture/overview.md
+    code_reference: core/api/main.py
+    notes: Running on port 8443. Endpoints for ingest, query, alerts, summary.
+
+  - id: ARCH-002
+    name: Agent Framework
+    description: Cross-platform Python agent with pluggable collector architecture.
+    status: implemented
+    priority: critical
+    documentation_reference: architecture/components.md
+    code_reference: agent/agent.py
+    notes: Supports CPU, Memory, Disk, Network, Maximo collectors.
+
+  - id: ARCH-003
+    name: Collector Component
+    description: Intermediate data concentrator with 24h buffering and GZIP compression.
+    status: missing
+    priority: medium
+    documentation_reference: installation/collectors.md
+    code_reference: null
+    notes: Documented as a separate binary with buffering and compression. No code exists. Agents currently push directly to Core.
+
+  - id: ARCH-004
+    name: HA Cluster Mode
+    description: Active/Passive Core cluster with Virtual IP failover.
+    status: missing
+    priority: low
+    documentation_reference: installation/core.md
+    code_reference: null
+    notes: Docs reference systemctl, VIP, and engine.yaml. Current deployment is single-node only.
+
+  # ===== METRIC INGESTION =====
+  - id: ING-001
+    name: Metric Ingestion Pipeline
+    description: FastAPI endpoint accepting JSON metric batches via POST.
+    status: implemented
+    priority: critical
+    documentation_reference: getting_started.md
+    code_reference: core/api/main.py
+    notes: Endpoint /api/v1/metrics/ingest working. Accepts MetricBatch Pydantic model.
+
+  - id: ING-002
+    name: Metric Namespace Standard
+    description: Hierarchical metric naming (domain.component.subcomponent.metric).
+    status: partial
+    priority: medium
+    documentation_reference: platform_config/metrics.md
+    code_reference: agent/collectors/system.py
+    notes: Agent uses os.cpu.usage format. No server-side validation of namespace compliance.
+
+  - id: ING-003
+    name: Hysteresis / Recovery Delta
+    description: Prevent alert flapping with configurable recovery threshold.
+    status: missing
+    priority: medium
+    documentation_reference: platform_config/metrics.md
+    code_reference: null
+    notes: Docs describe trigger/recovery/duration JSON config. Alert engine uses simple threshold only.
+
+  - id: ING-004
+    name: Severity Model (Info/Warning/Critical)
+    description: 3-tier alert severity classification.
+    status: missing
+    priority: high
+    documentation_reference: platform_config/metrics.md
+    code_reference: null
+    notes: AlertRule model has no severity field. All alerts are treated equally.
+
+  # ===== OS MONITORING =====
+  - id: OS-001
+    name: CPU Collector
+    description: Collect CPU usage percentage.
+    status: implemented
+    priority: critical
+    documentation_reference: monitoring/os.md
+    code_reference: agent/collectors/system.py
+    notes: CPUCollector using psutil.cpu_percent().
+
+  - id: OS-002
+    name: Memory Collector
+    description: Collect RAM usage.
+    status: implemented
+    priority: critical
+    documentation_reference: monitoring/os.md
+    code_reference: agent/collectors/system.py
+    notes: MemoryCollector using psutil.virtual_memory().
+
+  - id: OS-003
+    name: Disk Collector
+    description: Collect disk usage per volume.
+    status: implemented
+    priority: critical
+    documentation_reference: monitoring/os.md
+    code_reference: agent/collectors/system.py
+    notes: DiskCollector iterates psutil.disk_partitions().
+
+  - id: OS-004
+    name: Swap Monitoring
+    description: Monitor swap/pagefile usage percentage.
+    status: missing
+    priority: medium
+    documentation_reference: monitoring/os.md
+    code_reference: null
+    notes: Documented as os.swap.usage_pct. Not implemented in any collector.
+
+  - id: OS-005
+    name: Service Monitoring
+    description: Check if critical OS services are running (e.g. IBMHTTPServer).
+    status: missing
+    priority: high
+    documentation_reference: monitoring/os.md
+    code_reference: null
+    notes: Documented as os.service.status[name]. No ServiceCollector exists.
+
+  - id: OS-006
+    name: Log Inspection
+    description: Real-time tailing of log files for keyword matching.
+    status: missing
+    priority: high
+    documentation_reference: monitoring/os.md
+    code_reference: null
+    notes: Documented as os.log.grep[path, pattern]. No LogCollector exists.
+
+  - id: OS-007
+    name: Network Collector
+    description: Collect network I/O statistics.
+    status: implemented
+    priority: medium
+    documentation_reference: monitoring/os.md
+    code_reference: agent/collectors/system.py
+    notes: NetworkCollector exists. Disabled by default in config.json.
+
+  # ===== WEBSPHERE MONITORING =====
+  - id: WAS-001
+    name: JVM Heap Monitoring
+    description: Monitor WebSphere JVM heap memory usage.
+    status: partial
+    priority: critical
+    documentation_reference: monitoring/websphere.md
+    code_reference: agent/collectors/maximo.py
+    notes: MaximoCollector queries java.lang:type=Memory via JmxBridge.jar. Metric key differs from docs (maximo.jvm.heap.used vs ibm.was.jvm.heap.percent_used).
+
+  - id: WAS-002
+    name: Thread Pool Monitoring
+    description: Monitor WebContainer thread pool saturation.
+    status: partial
+    priority: high
+    documentation_reference: monitoring/websphere.md
+    code_reference: agent/collectors/maximo.py
+    notes: MaximoCollector queries ThreadCount. Does not query WebContainer-specific or max pool size.
+
+  - id: WAS-003
+    name: JDBC Connection Pool
+    description: Monitor MaximoDS JDBC pool health (free connections, wait time).
+    status: missing
+    priority: high
+    documentation_reference: monitoring/websphere.md
+    code_reference: null
+    notes: No JDBC pool MBean query configured in MaximoCollector.
+
+  - id: WAS-004
+    name: Garbage Collection Metrics
+    description: Monitor JVM GC time spent.
+    status: missing
+    priority: medium
+    documentation_reference: monitoring/websphere.md
+    code_reference: null
+    notes: Documented as ibm.was.jvm.gc.time_spent. No GC MBean query exists.
+
+  - id: WAS-005
+    name: SSL Certificate Probes
+    description: Scan WebSphere KeyStore for expiring certificates.
+    status: missing
+    priority: medium
+    documentation_reference: monitoring/websphere.md
+    code_reference: null
+    notes: Documented as security.cert.expiry_days. No certificate scanner exists.
+
+  # ===== DB2 MONITORING =====
+  - id: DB2-001
+    name: DB2 Active Connections
+    description: Monitor active application connections against MAXAPPLS.
+    status: missing
+    priority: high
+    documentation_reference: monitoring/db2.md
+    code_reference: null
+    notes: No DB2Collector exists. Would require ibm_db or pyodbc driver.
+
+  - id: DB2-002
+    name: DB2 Deadlock Detection
+    description: Detect and alert on database deadlocks.
+    status: missing
+    priority: high
+    documentation_reference: monitoring/db2.md
+    code_reference: null
+    notes: Documented as ibm.db2.locks.deadlocks. No implementation.
+
+  - id: DB2-003
+    name: DB2 Tablespace Usage
+    description: Monitor tablespace capacity for trend analysis.
+    status: missing
+    priority: medium
+    documentation_reference: monitoring/db2.md
+    code_reference: null
+    notes: Documented as ibm.db2.tablespace.usage_pct. No implementation.
+
+  - id: DB2-004
+    name: DB2 Backup Age Monitor
+    description: Alert if last backup exceeds 24 hours.
+    status: missing
+    priority: high
+    documentation_reference: monitoring/db2.md
+    code_reference: null
+    notes: Documented as ibm.db2.maintenance.last_backup_age_hours. No implementation.
+
+  # ===== MAXIMO APPLICATION =====
+  - id: MAX-001
+    name: Maximo JMX Bridge
+    description: Java utility to query WebSphere MBeans and return JSON.
+    status: implemented
+    priority: critical
+    documentation_reference: monitoring/maximo.md
+    code_reference: agent/java/src/JmxBridge.java
+    notes: Compiled to agent/lib/JmxBridge.jar. Accepts host/port/user/pass/bean/attribute args.
+
+  - id: MAX-002
+    name: Synthetic UX Probe
+    description: Simulate user login flow and measure response time.
+    status: missing
+    priority: medium
+    documentation_reference: monitoring/maximo.md
+    code_reference: null
+    notes: Documented as ux.scenario.login_flow. No Selenium/HTTP probe exists.
+
+  - id: MAX-003
+    name: Cron Task Validator
+    description: Query CRONTASKINSTANCE table for stale/failed tasks.
+    status: missing
+    priority: high
+    documentation_reference: monitoring/maximo.md
+    code_reference: null
+    notes: Documented as maximo.cron.stale_count. Requires DB read-only access.
+
+  - id: MAX-004
+    name: Escalation Engine Monitor
+    description: Monitor escalation processing backlog.
+    status: missing
+    priority: medium
+    documentation_reference: monitoring/maximo.md
+    code_reference: null
+    notes: Documented as maximo.escalation.backlog. No implementation.
+
+  # ===== ALERTING =====
+  - id: ALERT-001
+    name: Threshold Alert Engine
+    description: Evaluate metrics against configurable threshold rules.
+    status: implemented
+    priority: critical
+    documentation_reference: operations/alerting.md
+    code_reference: core/engine/alerts.py
+    notes: AlertEvaluator supports >, <, == conditions. Auto-resolves when metric returns below threshold.
+
+  - id: ALERT-002
+    name: Microsoft Teams Notifications
+    description: Send alert payloads to Teams via Incoming Webhooks.
+    status: missing
+    priority: critical
+    documentation_reference: operations/alerting.md
+    code_reference: null
+    notes: Docs show Adaptive Card JSON payload. No webhook dispatcher code exists.
+
+  - id: ALERT-003
+    name: Escalation Chain
+    description: Time-based escalation (T+0m notify, T+15m SMS, T+60m email manager).
+    status: missing
+    priority: high
+    documentation_reference: operations/alerting.md
+    code_reference: null
+    notes: No escalation scheduler or acknowledgment system exists.
+
+  - id: ALERT-004
+    name: Routing Logic
+    description: Route alerts based on work hours vs off hours.
+    status: missing
+    priority: medium
+    documentation_reference: operations/alerting.md
+    code_reference: null
+    notes: No time-based routing logic exists.
+
+  # ===== DASHBOARD =====
+  - id: DASH-001
+    name: Basic Status Dashboard
+    description: HTML/JS page showing host count, alerts, tenant selector, and status.
+    status: implemented
+    priority: critical
+    documentation_reference: platform_config/dashboards.md
+    code_reference: core/web/static/index.html
+    notes: Dark-mode dashboard with stat cards, alert table, host list, tenant filter. Auto-refreshes every 5s.
+
+  - id: DASH-002
+    name: Executive Dashboard
+    description: SLA tracking, license usage, traffic-light status.
+    status: missing
+    priority: medium
+    documentation_reference: platform_config/dashboards.md
+    code_reference: null
+    notes: Documented as 30-day rolling availability, license counts. No view exists.
+
+  - id: DASH-003
+    name: NOC Operations Dashboard
+    description: Live alert feed, DB lock monitor, JVM heatmap.
+    status: missing
+    priority: medium
+    documentation_reference: platform_config/dashboards.md
+    code_reference: null
+    notes: No specialized NOC view exists.
+
+  - id: DASH-004
+    name: Engineer Deep-Dive Dashboard
+    description: Detailed graphs for heap, GC, CPU steal time plus log stream.
+    status: missing
+    priority: medium
+    documentation_reference: platform_config/dashboards.md
+    code_reference: null
+    notes: No detailed engineering view or log streaming exists.
+
+  - id: DASH-005
+    name: Host Metrics Drill-Down
+    description: Click a hostname to see live CPU, Memory, Disk gauges and full metrics table.
+    status: implemented
+    priority: high
+    documentation_reference: platform_config/dashboards.md
+    code_reference: core/web/static/index.html
+    notes: Circular SVG gauges with color thresholds (green/yellow/red). Full metric table with timestamps. Auto-refreshes while open.
+
+  # ===== SECURITY =====
+  - id: SEC-001
+    name: TLS Encryption
+    description: All Agent-to-Core traffic encrypted via TLS 1.3.
+    status: missing
+    priority: critical
+    documentation_reference: security/hardening.md
+    code_reference: null
+    notes: All current traffic is plaintext HTTP. No TLS configuration exists.
+
+  - id: SEC-002
+    name: Authentication (AD/LDAP)
+    description: Core access integrated with Active Directory.
+    status: missing
+    priority: high
+    documentation_reference: security/hardening.md
+    code_reference: null
+    notes: No authentication middleware on any API endpoint.
+
+  - id: SEC-003
+    name: Agent Certificate Auth
+    description: Agents authenticate using 2048-bit certificates.
+    status: missing
+    priority: high
+    documentation_reference: security/hardening.md
+    code_reference: null
+    notes: No certificate generation or validation exists.
+
+  - id: SEC-004
+    name: Encrypted Vault
+    description: Secure storage for DB passwords and probe credentials.
+    status: missing
+    priority: medium
+    documentation_reference: security/hardening.md
+    code_reference: null
+    notes: Documented as esol-vault CLI tool. No vault implementation exists. Passwords stored in plaintext JSON.
+
+  # ===== CUSTOM EXTENSIONS =====
+  - id: EXT-001
+    name: Custom Probe Extension API
+    description: Execute local PowerShell/Bash scripts as metric probes.
+    status: missing
+    priority: high
+    documentation_reference: custom_monitoring/scripts.md
+    code_reference: null
+    notes: Documented as probes section in config with cmd and timeout. No probe executor exists in agent.
+
+  # ===== PACKAGING & DEPLOYMENT =====
+  - id: PKG-001
+    name: Windows Standalone EXE
+    description: Package agent as standalone EXE for easy deployment.
+    status: implemented
+    priority: medium
+    documentation_reference: installation/agents.md
+    code_reference: agent.spec
+    notes: Packaged using PyInstaller as single-file EXE. No MSI yet, but EXE is sufficient for current requirements.
+
+  - id: PKG-002
+    name: Linux RPM/DEB Package
+    description: Package agent as RPM/DEB for yum/apt deployment.
+    status: missing
+    priority: medium
+    documentation_reference: installation/agents.md
+    code_reference: null
+    notes: No packaging scripts exist.
+
+  # ===== OPERATIONS =====
+  - id: OPS-001
+    name: Backup Utility
+    description: Built-in backup command with S3 target and retention.
+    status: missing
+    priority: low
+    documentation_reference: maintenance/backup_dr.md
+    code_reference: null
+    notes: Documented as esol-admin backup CLI. No backup tooling exists.
+
+  - id: OPS-002
+    name: Disaster Recovery
+    description: Automatic failover to standby Core with DNS update.
+    status: missing
+    priority: low
+    documentation_reference: maintenance/backup_dr.md
+    code_reference: null
+    notes: Documented as passive Core promotion. Single-node deployment only.
+
+  - id: OPS-003
+    name: Runbook Procedures
+    description: Incident response workflow with acknowledgment.
+    status: missing
+    priority: low
+    documentation_reference: operations/runbook.md
+    code_reference: null
+    notes: Docs contain restart procedures but no in-app acknowledgment or workflow system.
+
+# ===== SUMMARY =====
+# Total Features: 45
+# Implemented: 11
+# Partial: 3
+# Missing: 31
+# Planned: 0
