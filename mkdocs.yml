@@ -1,5 +1,6 @@
 site_name: eSolutions Monitoring Plan
 site_description: Implementation Plan for eSolutions Monitoring Platform
+site_url: https://BasselFaisalEmara.github.io/EsMonitorDocs/
 
 dev_addr: '127.0.0.1:8090'
 
