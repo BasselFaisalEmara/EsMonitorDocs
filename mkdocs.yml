@@ -15,6 +15,17 @@ theme:
       primary: deep purple
       accent: teal
 
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - admonition
+
 nav:
   - Plan Overview: index.md
   - 🚀 Getting Started: getting_started.md
@@ -26,13 +37,17 @@ nav:
       - Prerequisites: implementation/requirements.md
   - Documentation Alignment:
       - Tooling Overview: tooling/index.md
-      - Implementation Gap: tooling/implementation_gap.yaml
+      - Gap Analysis Report: gap_analysis_report.md
   - Deployment Strategy:
       - Unified Deployment Guide: deployment_guide.md
       - Architecture Design: architecture/overview.md
       - Enterprise Scaling: architecture/scaling.md
       - Components: architecture/components.md
       - OS Compatibility: architecture/compatibility.md
+  - Installation:
+      - Core Setup: installation/core.md
+      - Agent Setup: installation/agents.md
+      - Collector Setup: installation/collectors.md
   - Monitoring Scope:
       - Maximo Metrics: monitoring/maximo.md
       - Middleware (WAS): monitoring/websphere.md

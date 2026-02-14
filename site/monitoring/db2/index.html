@@ -10,6 +10,8 @@
       
       
       
+        <link rel="canonical" href="https://BasselFaisalEmara.github.io/EsMonitorDocs/monitoring/db2/">
+      
       
         <link rel="prev" href="../os/">
       
@@ -280,6 +282,26 @@
   
   
   Deployment Strategy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../installation/core/" class="md-tabs__link">
+          
+  
+  
+  Installation
 
         </a>
       </li>
@@ -766,14 +788,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tooling/implementation_gap.yaml" class="md-nav__link">
+      <a href="../../gap_analysis_report/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Implementation Gap
+    Gap Analysis Report
   
 
     
@@ -999,6 +1021,151 @@
       
   
   
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/collectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collector Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -1020,10 +1187,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -1041,8 +1208,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1203,6 +1370,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#current-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current State
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#planned-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planned Metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Planned Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#performance-indicators" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1212,8 +1402,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#capacity-planning" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1223,8 +1413,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#maintenance-checks" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1232,6 +1422,61 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-approach-when-built" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Approach (When Built)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Approach (When Built)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1273,10 +1518,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
   
   
@@ -1294,8 +1539,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1390,10 +1635,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
             
   
   
@@ -1411,8 +1656,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1479,10 +1724,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   
@@ -1500,8 +1745,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1596,10 +1841,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
             
   
   
@@ -1617,8 +1862,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1718,6 +1963,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#current-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current State
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#planned-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planned Metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Planned Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#performance-indicators" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1727,8 +1995,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#capacity-planning" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1738,8 +2006,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#maintenance-checks" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1747,6 +2015,61 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-approach-when-built" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Approach (When Built)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Approach (When Built)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1768,32 +2091,137 @@
 
 
 <h1 id="database-db2-monitoring">Database (DB2) Monitoring</h1>
-<p>The <strong>DB2 Application Module</strong> connects directly to the DB2 instance.</p>
-<h2 id="performance-indicators">Performance Indicators</h2>
+<blockquote>
+<p><strong>Status</strong>: DB2 monitoring is <strong>planned</strong> but not yet implemented. No DB2 collector, driver, or connection code exists in the current codebase.</p>
+</blockquote>
+<hr />
+<h2 id="current-state">Current State</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Component</th>
+<th style="text-align: left;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">DB2 Collector (agent module)</td>
+<td style="text-align: left;">🔴 Not Implemented</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ibm_db</code> Python driver</td>
+<td style="text-align: left;">🔴 Not in requirements.txt</td>
+</tr>
+<tr>
+<td style="text-align: left;">DB2 connection configuration</td>
+<td style="text-align: left;">🔴 Not Implemented</td>
+</tr>
+<tr>
+<td style="text-align: left;">DB2 metric ingestion</td>
+<td style="text-align: left;">🔴 Not Implemented</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="planned-metrics">Planned Metrics</h2>
+<p>The following metrics are planned for the DB2 monitoring module:</p>
+<h3 id="performance-indicators">Performance Indicators</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric Key</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Alert Condition</th>
+<th style="text-align: center;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>ibm.db2.connections.active</code></td>
+<td style="text-align: left;">Active application connections</td>
+<td style="text-align: left;">&gt; 80% of <code>MAXAPPLS</code></td>
+<td style="text-align: center;">🔴 Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ibm.db2.locks.deadlocks</code></td>
+<td style="text-align: left;">Deadlock count</td>
+<td style="text-align: left;">Any increase &gt; 0</td>
+<td style="text-align: center;">🔴 Planned</td>
+</tr>
+</tbody>
+</table>
+<h3 id="capacity-planning">Capacity Planning</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric Key</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Use Case</th>
+<th style="text-align: center;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>ibm.db2.tablespace.usage_pct[MAXDATA]</code></td>
+<td style="text-align: left;">Tablespace usage percentage</td>
+<td style="text-align: left;">Storage forecasting</td>
+<td style="text-align: center;">🔴 Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ibm.db2.logs.primary_usage</code></td>
+<td style="text-align: left;">Transaction log usage</td>
+<td style="text-align: left;">Log space management</td>
+<td style="text-align: center;">🔴 Planned</td>
+</tr>
+</tbody>
+</table>
+<h3 id="maintenance-checks">Maintenance Checks</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric Key</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Alert Condition</th>
+<th style="text-align: center;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>ibm.db2.maintenance.last_backup_age_hours</code></td>
+<td style="text-align: left;">Hours since last backup</td>
+<td style="text-align: left;">Critical if &gt; 24 hours</td>
+<td style="text-align: center;">🔴 Planned</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="implementation-approach-when-built">Implementation Approach (When Built)</h2>
+<p>The DB2 collector will:</p>
+<ol>
+<li>Connect to DB2 using the <code>ibm_db</code> Python driver</li>
+<li>Execute read-only monitoring queries against DB2 snapshot functions</li>
+<li>Report metrics to the Core API via the standard ingestion endpoint</li>
+</ol>
+<h3 id="required-dependencies">Required Dependencies</h3>
+<div class="highlight"><pre><span></span><code>ibm_db==3.2.3               # IBM DB2 Python driver
+</code></pre></div>
+<h3 id="required-configuration">Required Configuration</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;db2&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;db2-server&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MAXDB&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;db2monitor&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;password&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="prerequisites">Prerequisites</h3>
 <ul>
-<li><strong>Active Applications</strong>: <code>ibm.db2.connections.active</code><ul>
-<li>Alert if &gt; 80% of <code>MAXAPPLS</code>.</li>
-</ul>
-</li>
-<li><strong>Locking</strong>: <code>ibm.db2.locks.deadlocks</code><ul>
-<li>Alert: Any increase &gt; 0.</li>
-</ul>
-</li>
-</ul>
-<h2 id="capacity-planning">Capacity Planning</h2>
-<ul>
-<li><strong>Tablespace Usage</strong>: <code>ibm.db2.tablespace.usage_pct[MAXDATA]</code><ul>
-<li>Used for trend analysis and storage forecasting.</li>
-</ul>
-</li>
-<li><strong>Transaction Logs</strong>: <code>ibm.db2.logs.primary_usage</code></li>
-</ul>
-<h2 id="maintenance-checks">Maintenance Checks</h2>
-<ul>
-<li><strong>Backup Age</strong>: <code>ibm.db2.maintenance.last_backup_age_hours</code><ul>
-<li>Critical Alert if &gt; 24 hours.</li>
-</ul>
-</li>
+<li>DB2 client libraries on the agent server</li>
+<li><code>db2monitor</code> user with <code>SYSMON</code> authority (read-only)</li>
+<li>Network connectivity from agent to DB2 instance (TCP 50000)</li>
 </ul>
 
 

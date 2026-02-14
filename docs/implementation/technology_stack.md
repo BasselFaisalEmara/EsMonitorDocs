@@ -1,79 +1,111 @@
 # Technology Stack
 
-The eSolutions Monitoring Platform is built on a modern, scalable microservices architecture.
+The eSolutions Monitoring Platform is built with Python and designed to scale from a single-server MVP to a distributed enterprise deployment.
 
-## Core Technologies
+> This page documents both the **current implementation** and the **target architecture**. Items marked ✅ are in use today; items marked 🔴 are planned for future phases.
 
-### 1. Platform Engine
-*   **Language**: Python 3.11+
-*   **Framework**: FastAPI (async web framework) + Celery (distributed task queue).
-*   **Reason**: Rapid development, extensive library ecosystem, and strong integration capabilities with IBM technologies.
-*   **Components**:
-    *   **Data Ingestion Pipeline**: FastAPI endpoints + asyncio for concurrent processing (10K+ metrics/sec).
-    *   **Real-time Alert Engine**: Celery workers with rule evaluation using Python expressions.
-    *   **REST API Gateway**: FastAPI with Pydantic validation for external integrations.
-    *   **Scheduler**: APScheduler for cron-like metric collection tasks.
+---
 
-### 2. Time-Series Database
-*   **Primary**: SQLite (for MVP / Single-node deployments).
-*   **Production**: PostgreSQL 15 (for clustered/HA deployments).
-*   **Retention Policy**: 
-    *   One file database per core instance (`es_monitor.db`).
-    *   Automatic VACUUM management.
+## Current Stack (MVP — Tier 1)
 
-### 3. Messaging Queue
-*   **Technology**: RabbitMQ 3.12
-*   **Purpose**: Decouples Collectors from the Core for fault tolerance.
-*   **Queues**:
-    *   `metrics.ingest` - Raw metric stream.
-    *   `alerts.dispatch` - Outbound notifications.
+These technologies are **actively used** in the running system.
 
-### 4. Web Dashboard
-*   **Backend**: Python 3.11 (FastAPI framework).
-*   **Frontend**: React 18 + TypeScript + Material-UI.
-*   **Charting**: Apache ECharts / Plotly.js for interactive graphs.
-*   **Real-time Updates**: WebSockets (via FastAPI WebSocket support).
-*   **Authentication**: OAuth2 / SAML 2.0 integration with Active Directory.
+### Core Engine
+| Component | Technology | Version | Notes |
+| :--- | :--- | :--- | :--- |
+| **Language** | Python | 3.11+ | All components |
+| **Web Framework** | FastAPI | 0.109+ | REST API + static file serving |
+| **ASGI Server** | Uvicorn | 0.27+ | Development and production |
+| **ORM** | SQLAlchemy | 2.0+ | Database models and queries |
+| **Validation** | Pydantic | 2.5+ | API request/response validation |
+| **Config** | PyYAML | 6.0+ | YAML configuration parsing |
 
-### 5. Configuration Management
-*   **Format**: YAML / JSON (stored in PostgreSQL `config` table).
-*   **Validation**: JSON Schema for all configuration files.
+### Database
+| Component | Technology | Notes |
+| :--- | :--- | :--- |
+| **Storage** | SQLite | Zero-config, file-based (`es_monitor.db`) |
+| **Schema** | SQLAlchemy ORM | Auto-created on startup |
 
-## Agent Technologies
+### Web Dashboard
+| Component | Technology | Notes |
+| :--- | :--- | :--- |
+| **Frontend** | HTML5 + Alpine.js (CDN) | Single-page application |
+| **Styling** | Tailwind CSS (CDN) | Utility-first CSS framework |
+| **Gauges** | Hand-coded SVG | Circular gauge components |
+| **Data Refresh** | REST API polling | Every 5 seconds |
+| **Served By** | FastAPI `StaticFiles` | No separate web server needed |
 
-### Universal Agent (Cross-Platform)
-*   **Language**: Python 3.11 (packaged with PyInstaller for standalone executables).
-*   **Deployment**: 
-    *   **Windows**: MSI Installer (via SCCM / GPO).
-    *   **Linux**: RPM / DEB packages (via Ansible / yum/apt).
-*   **Core Libraries**:
-    *   `psutil` - Cross-platform system metrics (CPU, RAM, Disk, Network).
-    *   `requests` - HTTP client for API monitoring.
-    *   `pyodbc` / `ibm_db` - Database connectivity (SQL Server, DB2).
-*   **Windows-Specific Probes**:
-    *   WMI queries via `wmi` library.
-    *   Event Log tailing via `win32evtlog`.
-    *   PowerShell script execution via `subprocess`.
-*   **Linux-Specific Probes**:
-    *   `/proc` and `/sys` filesystem parsing.
-    *   Systemd status via `subprocess` + `systemctl`.
-    *   Bash script execution.
+### Agent
+| Component | Technology | Notes |
+| :--- | :--- | :--- |
+| **Metrics** | psutil | Cross-platform CPU, RAM, Disk, Network |
+| **HTTP Client** | requests | Agent → Core communication |
+| **JMX Bridge** | Java subprocess | `JmxBridge.jar` for Maximo/WebSphere MBeans |
+| **Packaging** | PyInstaller | Standalone `.exe` (no Python required on target) |
 
-## Integrations
+### Notifications
+| Channel | Technology | Status |
+| :--- | :--- | :--- |
+| **Email (SMTP)** | `smtplib` (stdlib) | ✅ Implemented (very_critical only) |
+| **Dashboard** | REST API | ✅ Implemented (all severities) |
+| **Log File** | Python `logging` | ✅ Implemented |
 
-### IBM Maximo
-*   **Method**: RESTful API + Direct DB Queries (Read-Only).
-*   **Libraries**: `python-requests`, `ibm_db` (DB2 connector).
+### Alert Engine
+| Component | Technology | Notes |
+| :--- | :--- | :--- |
+| **Rule Evaluation** | Python (synchronous) | Evaluated inline during metric ingestion |
+| **Rules Storage** | SQLite `alert_rules` table | Seeded on first startup |
+| **History** | SQLite `alert_history` table | FIRING / RESOLVED lifecycle |
 
-### WebSphere
-*   **Method**: JMX over RMI.
-*   **Libraries**: Java Gateway (OpenJDK 11 + JMX Client).
+---
 
-### Microsoft Teams
-*   **Method**: Incoming Webhooks.
-*   **Payload**: Adaptive Cards (JSON format).
+## Target Architecture (Future Phases)
 
-## Security Technologies
-*   **Encryption**: TLS 1.3 (ChaCha20-Poly1305 cipher suite).
-*   **Secrets**: HashiCorp Vault integration (optional) or native encrypted storage.
-*   **Certificates**: Internal PKI using Let's Encrypt or corporate CA.
+The following technologies are **planned** but **not yet implemented**.
+
+### Phase B (Next Sprint)
+
+| Component | Planned Technology | Purpose | Status |
+| :--- | :--- | :--- | :---: |
+| MS Teams Notifications | Incoming Webhooks | Alert channel for operations | 🔴 Planned |
+| API Authentication | API Key / Bearer Token | Secure agent-to-core communication | 🔴 Planned |
+| HTTPS | Reverse Proxy (NGINX) or native TLS | Transport encryption | 🔴 Planned |
+
+### Phase C (Enterprise Scaling)
+
+| Component | Planned Technology | Purpose | Status |
+| :--- | :--- | :--- | :---: |
+| Production Database | PostgreSQL 15+ | Scalable storage for high ingestion | 🔴 Planned |
+| Time-Series Extension | TimescaleDB | Efficient time-series queries | 🔴 Planned |
+| Message Queue | RabbitMQ / Redis Streams | Decouple ingestion from processing | 🔴 Planned |
+| Background Workers | Celery | Async alert evaluation and aggregation | 🔴 Planned |
+| Dashboard Frontend | React + TypeScript | Rich interactive dashboards | 🔴 Planned |
+| Charting | Apache ECharts | Time-series graphs | 🔴 Planned |
+| Real-time Updates | WebSockets | Live dashboard without polling | 🔴 Planned |
+| Authentication | OAuth2 / SAML 2.0 | Enterprise AD integration | 🔴 Planned |
+| Secrets | HashiCorp Vault | Encrypted credential storage | 🔴 Planned |
+| Docker | Container deployment | Cloud-native packaging | 🔴 Planned |
+
+---
+
+## Dependency List
+
+### `requirements.txt` (Current)
+```txt
+fastapi
+uvicorn[standard]
+sqlalchemy
+pydantic
+pyyaml
+psutil
+requests
+```
+
+### Agent Additional Dependencies
+```txt
+# Included in PyInstaller bundle — no separate install needed
+psutil          # System metrics
+requests        # HTTP client
+```
+
+> **Note**: The agent is packaged as a standalone `.exe` via PyInstaller. Target servers do **not** need Python installed.

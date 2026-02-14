@@ -146,3 +146,82 @@ RULES:
 This is a production platform.
 
 Proceed.
+
+--------------------------------------------
+
+
+You are enhancing an enterprise monitoring dashboard.
+This task is strictly UI and presentation focused.
+
+Requirements:
+1. Improve metric display names to be clear, professional, and readable.
+2. Add a memory visualization that:
+   - Displays memory usage as a percentage (%).
+   - Displays memory used as an actual value (MB or GB).
+3. Allow switching between for all key type metrics:
+   - Percentage view (%)
+   - Actual usage view (MB / GB)
+4. Ensure:
+   - Units are clearly shown with each value.
+   - Percentage thresholds apply only to the percentage view.
+   - No additional metrics are collected or computed.
+   - Existing metrics are reused only.
+5. Classify each metric into one category:
+   - OS
+   - Maximo
+   - WebSphere
+   - Database
+   - Network
+6. Keep the dashboard lightweight and readable for operations teams.
+
+Return:
+- A table with:
+  Metric Name | Display Name | Metric Category | Display Unit
+- A short description (2–3 lines) explaining how the memory toggle works.
+
+Metrics:
+CPU Utilization (%)
+Memory Usage (%)
+Memory Used
+Disk Usage (C:)
+JVM Heap Memory Used
+Active JVM Threads
+Maximo Login Health
+WebSphere Application Status
+Database Connection Status
+
+add the light mode enable and disable in the dashboard
+
+
+
+--------------------------------------------------------------------
+
+
+
+
+You are acting as a senior technical reviewer and solution architect.
+
+Context:
+I am working with this project that uses MkDocs for documentation.
+After running the documentation locally, I found that:
+- Not all documented pages or sections are accessible or rendered correctly.
+- Some documented features, components, or workflows are described in detail but are not actually implemented or available in the running system.
+- There is a noticeable gap between what the documentation claims and what exists in the implementation.
+
+Your role:
+- Analyze the documentation critically, not theoretically.
+- Identify and highlight implementation gaps where features are documented but not applied.
+- Point out missing, inaccessible, or misleading documentation sections.
+- Focus on inconsistencies between documentation and real behavior, not on restating the docs.
+- Assume this is an enterprise system under development or audit.
+
+Constraints:
+- Do NOT invent features that are not documented.
+- Do NOT assume missing functionality exists unless proven.
+- Base conclusions strictly on documentation structure, content, and observable behavior.
+- Keep analysis concise, technical, and actionable.
+
+Expected output:
+- A clear list of identified gaps between documentation and implementation.
+- Notes on inaccessible or broken documentation sections when running MkDocs.
+- Practical recommendations to align documentation with actual implementation.

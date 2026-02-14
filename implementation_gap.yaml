@@ -71,13 +71,13 @@ features:
     notes: Docs describe trigger/recovery/duration JSON config. Alert engine uses simple threshold only.
 
   - id: ING-004
-    name: Severity Model (Info/Warning/Critical)
-    description: 3-tier alert severity classification.
-    status: missing
+    name: Severity Model (Info/Warning/Critical/Very_Critical)
+    description: 4-tier alert severity classification with notification routing.
+    status: implemented
     priority: high
-    documentation_reference: platform_config/metrics.md
-    code_reference: null
-    notes: AlertRule model has no severity field. All alerts are treated equally.
+    documentation_reference: operations/alerting.md
+    code_reference: core/database/models.py
+    notes: AlertRule model has severity field. Levels are info, warning, critical, very_critical. Email sent only for very_critical.
 
   # ===== OS MONITORING =====
   - id: OS-001
@@ -277,10 +277,19 @@ features:
     name: Microsoft Teams Notifications
     description: Send alert payloads to Teams via Incoming Webhooks.
     status: missing
-    priority: critical
+    priority: high
     documentation_reference: operations/alerting.md
     code_reference: null
     notes: Docs show Adaptive Card JSON payload. No webhook dispatcher code exists.
+
+  - id: ALERT-005
+    name: Email Notifications (SMTP)
+    description: Send email alerts for very_critical severity breaches via SMTP.
+    status: implemented
+    priority: critical
+    documentation_reference: operations/alerting.md
+    code_reference: core/engine/notifier.py
+    notes: HTML-formatted emails with severity badge, hostname, metric, threshold. Config in config.yaml notifications.email section. Sends on trigger and resolution.
 
   - id: ALERT-003
     name: Escalation Chain
@@ -441,8 +450,8 @@ features:
     notes: Docs contain restart procedures but no in-app acknowledgment or workflow system.
 
 # ===== SUMMARY =====
-# Total Features: 45
-# Implemented: 11
+# Total Features: 47
+# Implemented: 13
 # Partial: 3
 # Missing: 31
 # Planned: 0

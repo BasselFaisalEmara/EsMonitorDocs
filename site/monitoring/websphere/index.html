@@ -10,6 +10,8 @@
       
       
       
+        <link rel="canonical" href="https://BasselFaisalEmara.github.io/EsMonitorDocs/monitoring/websphere/">
+      
       
         <link rel="prev" href="../maximo/">
       
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#middleware-websphere-scope" class="md-skip">
+        <a href="#middleware-websphere-monitoring" class="md-skip">
           Skip to content
         </a>
       
@@ -280,6 +282,26 @@
   
   
   Deployment Strategy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../installation/core/" class="md-tabs__link">
+          
+  
+  
+  Installation
 
         </a>
       </li>
@@ -766,14 +788,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tooling/implementation_gap.yaml" class="md-nav__link">
+      <a href="../../gap_analysis_report/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Implementation Gap
+    Gap Analysis Report
   
 
     
@@ -999,6 +1021,151 @@
       
   
   
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/collectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collector Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -1020,10 +1187,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -1041,8 +1208,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1147,17 +1314,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#jvm-health" class="md-nav__link">
+  <a href="#jvm-health-via-jmx-bridge" class="md-nav__link">
     <span class="md-ellipsis">
       
-        JVM Health
+        JVM Health (via JMX Bridge)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JVM Health (via JMX Bridge)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
+  <a href="#planned-websphere-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planned WebSphere Metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Planned WebSphere Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#thread-pools" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1167,8 +1363,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#jdbc-connection-pools" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1178,12 +1374,39 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#ssl-certificate-probes" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#jvm-extended" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SSL Certificate Probes
+        JVM Extended
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
       
     </span>
   </a>
@@ -1284,10 +1507,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
   
   
@@ -1305,8 +1528,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1401,10 +1624,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
             
   
   
@@ -1422,8 +1645,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1490,10 +1713,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   
@@ -1511,8 +1734,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1607,10 +1830,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
             
   
   
@@ -1628,8 +1851,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1729,17 +1952,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#jvm-health" class="md-nav__link">
+  <a href="#jvm-health-via-jmx-bridge" class="md-nav__link">
     <span class="md-ellipsis">
       
-        JVM Health
+        JVM Health (via JMX Bridge)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JVM Health (via JMX Bridge)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
+  <a href="#planned-websphere-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planned WebSphere Metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Planned WebSphere Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#thread-pools" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1749,8 +2001,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#jdbc-connection-pools" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1760,12 +2012,39 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#ssl-certificate-probes" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#jvm-extended" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SSL Certificate Probes
+        JVM Extended
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
       
     </span>
   </a>
@@ -1789,27 +2068,183 @@
 
 
 
-<h1 id="middleware-websphere-scope">Middleware (WebSphere) Scope</h1>
-<p>Monitoring via the <strong>JMX Bridge Module</strong>.</p>
-<h2 id="jvm-health">JVM Health</h2>
+<h1 id="middleware-websphere-monitoring">Middleware (WebSphere) Monitoring</h1>
+<p>Monitoring WebSphere Application Server via the <strong>JMX Bridge Module</strong>.</p>
+<blockquote>
+<p>The JMX Bridge (<code>JmxBridge.jar</code>) is implemented and collects basic JVM metrics. Advanced WebSphere-specific metrics (thread pools, JDBC pools, SSL certs) are planned but not yet implemented.</p>
+</blockquote>
+<hr />
+<h2 id="jvm-health-via-jmx-bridge">JVM Health (via JMX Bridge)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric Key</th>
+<th style="text-align: left;">MBean</th>
+<th style="text-align: left;">Attribute</th>
+<th style="text-align: center;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>maximo.jvm.heap.used</code></td>
+<td style="text-align: left;"><code>java.lang:type=Memory</code></td>
+<td style="text-align: left;"><code>HeapMemoryUsage.used</code></td>
+<td style="text-align: center;">✅ Implemented</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>maximo.jvm.heap.max</code></td>
+<td style="text-align: left;"><code>java.lang:type=Memory</code></td>
+<td style="text-align: left;"><code>HeapMemoryUsage.max</code></td>
+<td style="text-align: center;">✅ Implemented</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>maximo.jvm.threads.active</code></td>
+<td style="text-align: left;"><code>java.lang:type=Threading</code></td>
+<td style="text-align: left;"><code>ThreadCount</code></td>
+<td style="text-align: center;">✅ Implemented</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>maximo.jvm.classes.loaded</code></td>
+<td style="text-align: left;"><code>java.lang:type=ClassLoading</code></td>
+<td style="text-align: left;"><code>LoadedClassCount</code></td>
+<td style="text-align: center;">✅ Implemented</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>maximo.jvm.cpu.process</code></td>
+<td style="text-align: left;"><code>java.lang:type=OperatingSystem</code></td>
+<td style="text-align: left;"><code>ProcessCpuLoad</code></td>
+<td style="text-align: center;">✅ Implemented</td>
+</tr>
+</tbody>
+</table>
+<h3 id="configuration">Configuration</h3>
+<p>Enable JMX collection in <code>agent/config.json</code>:
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;maximo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;protocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;iiop&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9060</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wasadmin&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wasadmin&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Protocol</th>
+<th style="text-align: left;">Use Case</th>
+<th style="text-align: left;">Port</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>iiop</code></td>
+<td style="text-align: left;">Traditional WebSphere 8.5/9.0</td>
+<td style="text-align: left;">9060 (default)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>rmi</code></td>
+<td style="text-align: left;">Liberty Profile / Open Liberty</td>
+<td style="text-align: left;">9443 (default)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="planned-websphere-metrics">Planned WebSphere Metrics</h2>
+<p>The following metrics are documented targets but <strong>not yet collected</strong> by the JMX Bridge.</p>
+<h3 id="thread-pools">Thread Pools</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric Key</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: center;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>ibm.was.threads.webcontainer.active</code></td>
+<td style="text-align: left;">WebContainer active threads</td>
+<td style="text-align: center;">🔴 Not Implemented</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ibm.was.threads.webcontainer.max</code></td>
+<td style="text-align: left;">WebContainer max threads</td>
+<td style="text-align: center;">🔴 Not Implemented</td>
+</tr>
+</tbody>
+</table>
+<h3 id="jdbc-connection-pools">JDBC Connection Pools</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric Key</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: center;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>ibm.was.jdbc.free_connections</code></td>
+<td style="text-align: left;">MaximoDS free JDBC connections</td>
+<td style="text-align: center;">🔴 Not Implemented</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ibm.was.jdbc.wait_time_ms</code></td>
+<td style="text-align: left;">JDBC connection wait time</td>
+<td style="text-align: center;">🔴 Not Implemented</td>
+</tr>
+</tbody>
+</table>
+<h3 id="jvm-extended">JVM Extended</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric Key</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: center;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>ibm.was.jvm.heap.percent_used</code></td>
+<td style="text-align: left;">Heap usage as percentage</td>
+<td style="text-align: center;">🔴 Not Implemented</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ibm.was.jvm.gc.time_spent</code></td>
+<td style="text-align: left;">GC pause time</td>
+<td style="text-align: center;">🔴 Not Implemented</td>
+</tr>
+</tbody>
+</table>
+<h3 id="security">Security</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric Key</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: center;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>security.cert.expiry_days</code></td>
+<td style="text-align: left;">SSL certificate days until expiry</td>
+<td style="text-align: center;">🔴 Not Implemented</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="prerequisites">Prerequisites</h2>
 <ul>
-<li><strong>Heap Usage</strong>: <code>ibm.was.jvm.heap.percent_used</code><ul>
-<li><em>Strategy</em>: Alert at 85% utilization to allow time for GC analysis.</li>
+<li>Java JDK 8+ installed on the Maximo server</li>
+<li><code>JmxBridge.jar</code> deployed in the agent's <code>lib/</code> directory (included in the agent package)</li>
+<li>WebSphere admin port accessible (default 9060 for IIOP)</li>
+<li>Valid WebSphere admin credentials</li>
 </ul>
-</li>
-<li><strong>Garbage Collection</strong>: <code>ibm.was.jvm.gc.time_spent</code></li>
-</ul>
-<h2 id="thread-pools">Thread Pools</h2>
-<p>Ensures the WebContainer is not saturated.
-*   <strong>Metric</strong>: <code>ibm.was.threads.webcontainer.active</code>
-*   <strong>Metric</strong>: <code>ibm.was.threads.webcontainer.max</code></p>
-<h2 id="jdbc-connection-pools">JDBC Connection Pools</h2>
-<p>Monitors the <code>MaximoDS</code> connection pool health.
-*   <strong>Metric</strong>: <code>ibm.was.jdbc.free_connections</code>
-*   <strong>Metric</strong>: <code>ibm.was.jdbc.wait_time_ms</code></p>
-<h2 id="ssl-certificate-probes">SSL Certificate Probes</h2>
-<p>Scans the WebSphere KeyStore (KDB) for expiring internal certs.
-*   <strong>Probe</strong>: <code>security.cert.expiry_days</code></p>
 
 
 

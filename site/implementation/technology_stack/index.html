@@ -10,6 +10,8 @@
       
       
       
+        <link rel="canonical" href="https://BasselFaisalEmara.github.io/EsMonitorDocs/implementation/technology_stack/">
+      
       
         <link rel="prev" href="../workflow/">
       
@@ -282,6 +284,26 @@
   
   
   Deployment Strategy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../installation/core/" class="md-tabs__link">
+          
+  
+  
+  Installation
 
         </a>
       </li>
@@ -656,22 +678,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#core-technologies" class="md-nav__link">
+  <a href="#current-stack-mvp-tier-1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Technologies
+        Current Stack (MVP — Tier 1)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Core Technologies">
+    <nav class="md-nav" aria-label="Current Stack (MVP — Tier 1)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-platform-engine" class="md-nav__link">
+  <a href="#core-engine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Platform Engine
+        Core Engine
       
     </span>
   </a>
@@ -679,10 +701,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-time-series-database" class="md-nav__link">
+  <a href="#database" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Time-Series Database
+        Database
       
     </span>
   </a>
@@ -690,10 +712,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-messaging-queue" class="md-nav__link">
+  <a href="#web-dashboard" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Messaging Queue
+        Web Dashboard
       
     </span>
   </a>
@@ -701,10 +723,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-web-dashboard" class="md-nav__link">
+  <a href="#agent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Web Dashboard
+        Agent
       
     </span>
   </a>
@@ -712,10 +734,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-configuration-management" class="md-nav__link">
+  <a href="#notifications" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Configuration Management
+        Notifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alert-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alert Engine
       
     </span>
   </a>
@@ -728,22 +761,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#agent-technologies" class="md-nav__link">
+  <a href="#target-architecture-future-phases" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Agent Technologies
+        Target Architecture (Future Phases)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Agent Technologies">
+    <nav class="md-nav" aria-label="Target Architecture (Future Phases)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#universal-agent-cross-platform" class="md-nav__link">
+  <a href="#phase-b-next-sprint" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Universal Agent (Cross-Platform)
+        Phase B (Next Sprint)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-enterprise-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C (Enterprise Scaling)
       
     </span>
   </a>
@@ -756,22 +800,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#integrations" class="md-nav__link">
+  <a href="#dependency-list" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Integrations
+        Dependency List
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Integrations">
+    <nav class="md-nav" aria-label="Dependency List">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibm-maximo" class="md-nav__link">
+  <a href="#requirementstxt-current" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IBM Maximo
+        requirements.txt (Current)
       
     </span>
   </a>
@@ -779,21 +823,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#websphere" class="md-nav__link">
+  <a href="#agent-additional-dependencies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        WebSphere
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#microsoft-teams" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Microsoft Teams
+        Agent Additional Dependencies
       
     </span>
   </a>
@@ -802,17 +835,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security-technologies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Security Technologies
-      
-    </span>
-  </a>
   
 </li>
       
@@ -977,14 +999,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tooling/implementation_gap.yaml" class="md-nav__link">
+      <a href="../../gap_analysis_report/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Implementation Gap
+    Gap Analysis Report
   
 
     
@@ -1238,7 +1260,7 @@
   <span class="md-ellipsis">
     
   
-    Monitoring Scope
+    Installation
   
 
     
@@ -1251,6 +1273,151 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/collectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collector Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitoring Scope
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1401,10 +1568,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
   
   
@@ -1422,8 +1589,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1518,10 +1685,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
             
   
   
@@ -1539,8 +1706,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1607,10 +1774,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   
@@ -1628,8 +1795,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1724,10 +1891,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
             
   
   
@@ -1745,8 +1912,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1846,22 +2013,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#core-technologies" class="md-nav__link">
+  <a href="#current-stack-mvp-tier-1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Technologies
+        Current Stack (MVP — Tier 1)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Core Technologies">
+    <nav class="md-nav" aria-label="Current Stack (MVP — Tier 1)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-platform-engine" class="md-nav__link">
+  <a href="#core-engine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Platform Engine
+        Core Engine
       
     </span>
   </a>
@@ -1869,10 +2036,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-time-series-database" class="md-nav__link">
+  <a href="#database" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Time-Series Database
+        Database
       
     </span>
   </a>
@@ -1880,10 +2047,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-messaging-queue" class="md-nav__link">
+  <a href="#web-dashboard" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Messaging Queue
+        Web Dashboard
       
     </span>
   </a>
@@ -1891,10 +2058,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-web-dashboard" class="md-nav__link">
+  <a href="#agent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Web Dashboard
+        Agent
       
     </span>
   </a>
@@ -1902,10 +2069,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-configuration-management" class="md-nav__link">
+  <a href="#notifications" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Configuration Management
+        Notifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alert-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alert Engine
       
     </span>
   </a>
@@ -1918,22 +2096,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#agent-technologies" class="md-nav__link">
+  <a href="#target-architecture-future-phases" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Agent Technologies
+        Target Architecture (Future Phases)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Agent Technologies">
+    <nav class="md-nav" aria-label="Target Architecture (Future Phases)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#universal-agent-cross-platform" class="md-nav__link">
+  <a href="#phase-b-next-sprint" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Universal Agent (Cross-Platform)
+        Phase B (Next Sprint)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-enterprise-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C (Enterprise Scaling)
       
     </span>
   </a>
@@ -1946,22 +2135,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#integrations" class="md-nav__link">
+  <a href="#dependency-list" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Integrations
+        Dependency List
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Integrations">
+    <nav class="md-nav" aria-label="Dependency List">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibm-maximo" class="md-nav__link">
+  <a href="#requirementstxt-current" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IBM Maximo
+        requirements.txt (Current)
       
     </span>
   </a>
@@ -1969,21 +2158,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#websphere" class="md-nav__link">
+  <a href="#agent-additional-dependencies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        WebSphere
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#microsoft-teams" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Microsoft Teams
+        Agent Additional Dependencies
       
     </span>
   </a>
@@ -1992,17 +2170,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security-technologies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Security Technologies
-      
-    </span>
-  </a>
   
 </li>
       
@@ -2024,104 +2191,333 @@
 
 
 <h1 id="technology-stack">Technology Stack</h1>
-<p>The eSolutions Monitoring Platform is built on a modern, scalable microservices architecture.</p>
-<h2 id="core-technologies">Core Technologies</h2>
-<h3 id="1-platform-engine">1. Platform Engine</h3>
-<ul>
-<li><strong>Language</strong>: Python 3.11+</li>
-<li><strong>Framework</strong>: FastAPI (async web framework) + Celery (distributed task queue).</li>
-<li><strong>Reason</strong>: Rapid development, extensive library ecosystem, and strong integration capabilities with IBM technologies.</li>
-<li><strong>Components</strong>:<ul>
-<li><strong>Data Ingestion Pipeline</strong>: FastAPI endpoints + asyncio for concurrent processing (10K+ metrics/sec).</li>
-<li><strong>Real-time Alert Engine</strong>: Celery workers with rule evaluation using Python expressions.</li>
-<li><strong>REST API Gateway</strong>: FastAPI with Pydantic validation for external integrations.</li>
-<li><strong>Scheduler</strong>: APScheduler for cron-like metric collection tasks.</li>
-</ul>
-</li>
-</ul>
-<h3 id="2-time-series-database">2. Time-Series Database</h3>
-<ul>
-<li><strong>Primary</strong>: SQLite (for MVP / Single-node deployments).</li>
-<li><strong>Production</strong>: PostgreSQL 15 (for clustered/HA deployments).</li>
-<li><strong>Retention Policy</strong>: <ul>
-<li>One file database per core instance (<code>es_monitor.db</code>).</li>
-<li>Automatic VACUUM management.</li>
-</ul>
-</li>
-</ul>
-<h3 id="3-messaging-queue">3. Messaging Queue</h3>
-<ul>
-<li><strong>Technology</strong>: RabbitMQ 3.12</li>
-<li><strong>Purpose</strong>: Decouples Collectors from the Core for fault tolerance.</li>
-<li><strong>Queues</strong>:<ul>
-<li><code>metrics.ingest</code> - Raw metric stream.</li>
-<li><code>alerts.dispatch</code> - Outbound notifications.</li>
-</ul>
-</li>
-</ul>
-<h3 id="4-web-dashboard">4. Web Dashboard</h3>
-<ul>
-<li><strong>Backend</strong>: Python 3.11 (FastAPI framework).</li>
-<li><strong>Frontend</strong>: React 18 + TypeScript + Material-UI.</li>
-<li><strong>Charting</strong>: Apache ECharts / Plotly.js for interactive graphs.</li>
-<li><strong>Real-time Updates</strong>: WebSockets (via FastAPI WebSocket support).</li>
-<li><strong>Authentication</strong>: OAuth2 / SAML 2.0 integration with Active Directory.</li>
-</ul>
-<h3 id="5-configuration-management">5. Configuration Management</h3>
-<ul>
-<li><strong>Format</strong>: YAML / JSON (stored in PostgreSQL <code>config</code> table).</li>
-<li><strong>Validation</strong>: JSON Schema for all configuration files.</li>
-</ul>
-<h2 id="agent-technologies">Agent Technologies</h2>
-<h3 id="universal-agent-cross-platform">Universal Agent (Cross-Platform)</h3>
-<ul>
-<li><strong>Language</strong>: Python 3.11 (packaged with PyInstaller for standalone executables).</li>
-<li><strong>Deployment</strong>: <ul>
-<li><strong>Windows</strong>: MSI Installer (via SCCM / GPO).</li>
-<li><strong>Linux</strong>: RPM / DEB packages (via Ansible / yum/apt).</li>
-</ul>
-</li>
-<li><strong>Core Libraries</strong>:<ul>
-<li><code>psutil</code> - Cross-platform system metrics (CPU, RAM, Disk, Network).</li>
-<li><code>requests</code> - HTTP client for API monitoring.</li>
-<li><code>pyodbc</code> / <code>ibm_db</code> - Database connectivity (SQL Server, DB2).</li>
-</ul>
-</li>
-<li><strong>Windows-Specific Probes</strong>:<ul>
-<li>WMI queries via <code>wmi</code> library.</li>
-<li>Event Log tailing via <code>win32evtlog</code>.</li>
-<li>PowerShell script execution via <code>subprocess</code>.</li>
-</ul>
-</li>
-<li><strong>Linux-Specific Probes</strong>:<ul>
-<li><code>/proc</code> and <code>/sys</code> filesystem parsing.</li>
-<li>Systemd status via <code>subprocess</code> + <code>systemctl</code>.</li>
-<li>Bash script execution.</li>
-</ul>
-</li>
-</ul>
-<h2 id="integrations">Integrations</h2>
-<h3 id="ibm-maximo">IBM Maximo</h3>
-<ul>
-<li><strong>Method</strong>: RESTful API + Direct DB Queries (Read-Only).</li>
-<li><strong>Libraries</strong>: <code>python-requests</code>, <code>ibm_db</code> (DB2 connector).</li>
-</ul>
-<h3 id="websphere">WebSphere</h3>
-<ul>
-<li><strong>Method</strong>: JMX over RMI.</li>
-<li><strong>Libraries</strong>: Java Gateway (OpenJDK 11 + JMX Client).</li>
-</ul>
-<h3 id="microsoft-teams">Microsoft Teams</h3>
-<ul>
-<li><strong>Method</strong>: Incoming Webhooks.</li>
-<li><strong>Payload</strong>: Adaptive Cards (JSON format).</li>
-</ul>
-<h2 id="security-technologies">Security Technologies</h2>
-<ul>
-<li><strong>Encryption</strong>: TLS 1.3 (ChaCha20-Poly1305 cipher suite).</li>
-<li><strong>Secrets</strong>: HashiCorp Vault integration (optional) or native encrypted storage.</li>
-<li><strong>Certificates</strong>: Internal PKI using Let's Encrypt or corporate CA.</li>
-</ul>
+<p>The eSolutions Monitoring Platform is built with Python and designed to scale from a single-server MVP to a distributed enterprise deployment.</p>
+<blockquote>
+<p>This page documents both the <strong>current implementation</strong> and the <strong>target architecture</strong>. Items marked ✅ are in use today; items marked 🔴 are planned for future phases.</p>
+</blockquote>
+<hr />
+<h2 id="current-stack-mvp-tier-1">Current Stack (MVP — Tier 1)</h2>
+<p>These technologies are <strong>actively used</strong> in the running system.</p>
+<h3 id="core-engine">Core Engine</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Component</th>
+<th style="text-align: left;">Technology</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Language</strong></td>
+<td style="text-align: left;">Python</td>
+<td style="text-align: left;">3.11+</td>
+<td style="text-align: left;">All components</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Web Framework</strong></td>
+<td style="text-align: left;">FastAPI</td>
+<td style="text-align: left;">0.109+</td>
+<td style="text-align: left;">REST API + static file serving</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ASGI Server</strong></td>
+<td style="text-align: left;">Uvicorn</td>
+<td style="text-align: left;">0.27+</td>
+<td style="text-align: left;">Development and production</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ORM</strong></td>
+<td style="text-align: left;">SQLAlchemy</td>
+<td style="text-align: left;">2.0+</td>
+<td style="text-align: left;">Database models and queries</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Validation</strong></td>
+<td style="text-align: left;">Pydantic</td>
+<td style="text-align: left;">2.5+</td>
+<td style="text-align: left;">API request/response validation</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Config</strong></td>
+<td style="text-align: left;">PyYAML</td>
+<td style="text-align: left;">6.0+</td>
+<td style="text-align: left;">YAML configuration parsing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="database">Database</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Component</th>
+<th style="text-align: left;">Technology</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Storage</strong></td>
+<td style="text-align: left;">SQLite</td>
+<td style="text-align: left;">Zero-config, file-based (<code>es_monitor.db</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Schema</strong></td>
+<td style="text-align: left;">SQLAlchemy ORM</td>
+<td style="text-align: left;">Auto-created on startup</td>
+</tr>
+</tbody>
+</table>
+<h3 id="web-dashboard">Web Dashboard</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Component</th>
+<th style="text-align: left;">Technology</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Frontend</strong></td>
+<td style="text-align: left;">HTML5 + Alpine.js (CDN)</td>
+<td style="text-align: left;">Single-page application</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Styling</strong></td>
+<td style="text-align: left;">Tailwind CSS (CDN)</td>
+<td style="text-align: left;">Utility-first CSS framework</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Gauges</strong></td>
+<td style="text-align: left;">Hand-coded SVG</td>
+<td style="text-align: left;">Circular gauge components</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Data Refresh</strong></td>
+<td style="text-align: left;">REST API polling</td>
+<td style="text-align: left;">Every 5 seconds</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Served By</strong></td>
+<td style="text-align: left;">FastAPI <code>StaticFiles</code></td>
+<td style="text-align: left;">No separate web server needed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="agent">Agent</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Component</th>
+<th style="text-align: left;">Technology</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Metrics</strong></td>
+<td style="text-align: left;">psutil</td>
+<td style="text-align: left;">Cross-platform CPU, RAM, Disk, Network</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>HTTP Client</strong></td>
+<td style="text-align: left;">requests</td>
+<td style="text-align: left;">Agent → Core communication</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>JMX Bridge</strong></td>
+<td style="text-align: left;">Java subprocess</td>
+<td style="text-align: left;"><code>JmxBridge.jar</code> for Maximo/WebSphere MBeans</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Packaging</strong></td>
+<td style="text-align: left;">PyInstaller</td>
+<td style="text-align: left;">Standalone <code>.exe</code> (no Python required on target)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="notifications">Notifications</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Channel</th>
+<th style="text-align: left;">Technology</th>
+<th style="text-align: left;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Email (SMTP)</strong></td>
+<td style="text-align: left;"><code>smtplib</code> (stdlib)</td>
+<td style="text-align: left;">✅ Implemented (very_critical only)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Dashboard</strong></td>
+<td style="text-align: left;">REST API</td>
+<td style="text-align: left;">✅ Implemented (all severities)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Log File</strong></td>
+<td style="text-align: left;">Python <code>logging</code></td>
+<td style="text-align: left;">✅ Implemented</td>
+</tr>
+</tbody>
+</table>
+<h3 id="alert-engine">Alert Engine</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Component</th>
+<th style="text-align: left;">Technology</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Rule Evaluation</strong></td>
+<td style="text-align: left;">Python (synchronous)</td>
+<td style="text-align: left;">Evaluated inline during metric ingestion</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Rules Storage</strong></td>
+<td style="text-align: left;">SQLite <code>alert_rules</code> table</td>
+<td style="text-align: left;">Seeded on first startup</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>History</strong></td>
+<td style="text-align: left;">SQLite <code>alert_history</code> table</td>
+<td style="text-align: left;">FIRING / RESOLVED lifecycle</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="target-architecture-future-phases">Target Architecture (Future Phases)</h2>
+<p>The following technologies are <strong>planned</strong> but <strong>not yet implemented</strong>.</p>
+<h3 id="phase-b-next-sprint">Phase B (Next Sprint)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Component</th>
+<th style="text-align: left;">Planned Technology</th>
+<th style="text-align: left;">Purpose</th>
+<th style="text-align: center;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">MS Teams Notifications</td>
+<td style="text-align: left;">Incoming Webhooks</td>
+<td style="text-align: left;">Alert channel for operations</td>
+<td style="text-align: center;">🔴 Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;">API Authentication</td>
+<td style="text-align: left;">API Key / Bearer Token</td>
+<td style="text-align: left;">Secure agent-to-core communication</td>
+<td style="text-align: center;">🔴 Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;">HTTPS</td>
+<td style="text-align: left;">Reverse Proxy (NGINX) or native TLS</td>
+<td style="text-align: left;">Transport encryption</td>
+<td style="text-align: center;">🔴 Planned</td>
+</tr>
+</tbody>
+</table>
+<h3 id="phase-c-enterprise-scaling">Phase C (Enterprise Scaling)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Component</th>
+<th style="text-align: left;">Planned Technology</th>
+<th style="text-align: left;">Purpose</th>
+<th style="text-align: center;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Production Database</td>
+<td style="text-align: left;">PostgreSQL 15+</td>
+<td style="text-align: left;">Scalable storage for high ingestion</td>
+<td style="text-align: center;">🔴 Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;">Time-Series Extension</td>
+<td style="text-align: left;">TimescaleDB</td>
+<td style="text-align: left;">Efficient time-series queries</td>
+<td style="text-align: center;">🔴 Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;">Message Queue</td>
+<td style="text-align: left;">RabbitMQ / Redis Streams</td>
+<td style="text-align: left;">Decouple ingestion from processing</td>
+<td style="text-align: center;">🔴 Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;">Background Workers</td>
+<td style="text-align: left;">Celery</td>
+<td style="text-align: left;">Async alert evaluation and aggregation</td>
+<td style="text-align: center;">🔴 Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dashboard Frontend</td>
+<td style="text-align: left;">React + TypeScript</td>
+<td style="text-align: left;">Rich interactive dashboards</td>
+<td style="text-align: center;">🔴 Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;">Charting</td>
+<td style="text-align: left;">Apache ECharts</td>
+<td style="text-align: left;">Time-series graphs</td>
+<td style="text-align: center;">🔴 Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;">Real-time Updates</td>
+<td style="text-align: left;">WebSockets</td>
+<td style="text-align: left;">Live dashboard without polling</td>
+<td style="text-align: center;">🔴 Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;">Authentication</td>
+<td style="text-align: left;">OAuth2 / SAML 2.0</td>
+<td style="text-align: left;">Enterprise AD integration</td>
+<td style="text-align: center;">🔴 Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;">Secrets</td>
+<td style="text-align: left;">HashiCorp Vault</td>
+<td style="text-align: left;">Encrypted credential storage</td>
+<td style="text-align: center;">🔴 Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;">Docker</td>
+<td style="text-align: left;">Container deployment</td>
+<td style="text-align: left;">Cloud-native packaging</td>
+<td style="text-align: center;">🔴 Planned</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="dependency-list">Dependency List</h2>
+<h3 id="requirementstxt-current"><code>requirements.txt</code> (Current)</h3>
+<div class="highlight"><pre><span></span><code>fastapi
+uvicorn[standard]
+sqlalchemy
+pydantic
+pyyaml
+psutil
+requests
+</code></pre></div>
+<h3 id="agent-additional-dependencies">Agent Additional Dependencies</h3>
+<div class="highlight"><pre><span></span><code># Included in PyInstaller bundle — no separate install needed
+psutil          # System metrics
+requests        # HTTP client
+</code></pre></div>
+<blockquote>
+<p><strong>Note</strong>: The agent is packaged as a standalone <code>.exe</code> via PyInstaller. Target servers do <strong>not</strong> need Python installed.</p>
+</blockquote>
 
 
 
