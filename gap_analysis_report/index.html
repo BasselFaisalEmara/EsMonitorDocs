@@ -1,0 +1,3427 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Implementation Plan for eSolutions Monitoring Platform">
+      
+      
+      
+        <link rel="canonical" href="https://BasselFaisalEmara.github.io/EsMonitorDocs/gap_analysis_report/">
+      
+      
+        <link rel="prev" href="../tooling/">
+      
+      
+        <link rel="next" href="../deployment_guide/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Gap Analysis Report - eSolutions Monitoring Plan</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#documentation-vs-implementation-gap-analysis-report" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="eSolutions Monitoring Plan" class="md-header__button md-logo" aria-label="eSolutions Monitoring Plan" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            eSolutions Monitoring Plan
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Gap Analysis Report
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="teal"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Plan Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../getting_started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🚀 Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../implementation/overview/" class="md-tabs__link">
+          
+  
+  
+  Implementation Methodology
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../tooling/" class="md-tabs__link">
+          
+  
+  
+  Documentation Alignment
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../deployment_guide/" class="md-tabs__link">
+          
+  
+  
+  Deployment Strategy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../installation/core/" class="md-tabs__link">
+          
+  
+  
+  Installation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../monitoring/maximo/" class="md-tabs__link">
+          
+  
+  
+  Monitoring Scope
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../platform_config/metrics/" class="md-tabs__link">
+          
+  
+  
+  Platform Configuration
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../custom_monitoring/scripts/" class="md-tabs__link">
+          
+  
+  
+  Custom Extensions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../operations/alerting/" class="md-tabs__link">
+          
+  
+  
+  Operational Handover
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../security/hardening/" class="md-tabs__link">
+          
+  
+  
+  Governance
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="eSolutions Monitoring Plan" class="md-nav__button md-logo" aria-label="eSolutions Monitoring Plan" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    eSolutions Monitoring Plan
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation Methodology
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Implementation Methodology
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Phases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation/technology_stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technology Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation/python_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python Development Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation/requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prerequisites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation Alignment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentation Alignment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tooling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tooling Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gap Analysis Report
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gap Analysis Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-1-critical-security-hardening-100-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 1: 🔴 CRITICAL — Security &amp; Hardening (100% Gap)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Category 1: 🔴 CRITICAL — Security &amp; Hardening (100% Gap)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-2-critical-infrastructure-components-100-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 2: 🔴 CRITICAL — Infrastructure Components (100% Gap)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Category 2: 🔴 CRITICAL — Infrastructure Components (100% Gap)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#collectors-documented-in-5-pages-never-built" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collectors (Documented in 5+ pages, Never Built)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-availability-disaster-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High Availability &amp; Disaster Recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-3-major-monitoring-scope-gaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 3: 🟡 MAJOR — Monitoring Scope Gaps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Category 3: 🟡 MAJOR — Monitoring Scope Gaps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#os-monitoring-monitoringosmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OS Monitoring (monitoring/os.md)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maximo-monitoring-monitoringmaximomd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maximo Monitoring (monitoring/maximo.md)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#websphere-monitoring-monitoringwebspheremd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WebSphere Monitoring (monitoring/websphere.md)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db2-monitoring-monitoringdb2md" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB2 Monitoring (monitoring/db2.md)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-4-major-technology-stack-misrepresentations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 4: 🟡 MAJOR — Technology Stack Misrepresentations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Category 4: 🟡 MAJOR — Technology Stack Misrepresentations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actual-dependencies-requirementstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actual Dependencies (requirements.txt)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-5-major-dashboard-gaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 5: 🟡 MAJOR — Dashboard Gaps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-6-major-alerting-gaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 6: 🟡 MAJOR — Alerting Gaps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-7-metric-key-inconsistencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 7: 🟡 Metric Key Inconsistencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-8-mkdocs-rendering-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 8: 🔴 MkDocs Rendering Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Category 8: 🔴 MkDocs Rendering Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#broken-navigation-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Broken Navigation Items
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orphaned-pages-exist-but-not-in-nav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orphaned Pages (exist but not in nav)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-rendering-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Content Rendering Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-9-documentation-internal-contradictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 9: 🟡 Documentation Internal Contradictions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-10-custom-extensions-probe-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 10: Custom Extensions (Probe API)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommendations-prioritized" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommendations (Prioritized)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommendations (Prioritized)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#p0-fix-immediately-misleading-for-audits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔴 P0 — Fix Immediately (Misleading for Audits)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p1-fix-before-next-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟡 P1 — Fix Before Next Release
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2-improvement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟢 P2 — Improvement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-scorecard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary Scorecard
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment Strategy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment Strategy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unified Deployment Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/scaling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise Scaling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/compatibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OS Compatibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/collectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collector Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitoring Scope
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monitoring Scope
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitoring/maximo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maximo Metrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitoring/websphere/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Middleware (WAS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitoring/os/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitoring/db2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database (DB2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Platform Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform_config/metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metric Definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform_config/dashboards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Extensions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Custom Extensions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom_monitoring/scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scripts & Probes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Handover
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operational Handover
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/alerting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alerting Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/runbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runbooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Governance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/hardening/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintenance/backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DR & Backup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-1-critical-security-hardening-100-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 1: 🔴 CRITICAL — Security &amp; Hardening (100% Gap)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Category 1: 🔴 CRITICAL — Security &amp; Hardening (100% Gap)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-2-critical-infrastructure-components-100-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 2: 🔴 CRITICAL — Infrastructure Components (100% Gap)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Category 2: 🔴 CRITICAL — Infrastructure Components (100% Gap)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#collectors-documented-in-5-pages-never-built" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collectors (Documented in 5+ pages, Never Built)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-availability-disaster-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High Availability &amp; Disaster Recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-3-major-monitoring-scope-gaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 3: 🟡 MAJOR — Monitoring Scope Gaps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Category 3: 🟡 MAJOR — Monitoring Scope Gaps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#os-monitoring-monitoringosmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OS Monitoring (monitoring/os.md)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maximo-monitoring-monitoringmaximomd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maximo Monitoring (monitoring/maximo.md)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#websphere-monitoring-monitoringwebspheremd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WebSphere Monitoring (monitoring/websphere.md)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db2-monitoring-monitoringdb2md" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB2 Monitoring (monitoring/db2.md)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-4-major-technology-stack-misrepresentations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 4: 🟡 MAJOR — Technology Stack Misrepresentations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Category 4: 🟡 MAJOR — Technology Stack Misrepresentations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actual-dependencies-requirementstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actual Dependencies (requirements.txt)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-5-major-dashboard-gaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 5: 🟡 MAJOR — Dashboard Gaps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-6-major-alerting-gaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 6: 🟡 MAJOR — Alerting Gaps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-7-metric-key-inconsistencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 7: 🟡 Metric Key Inconsistencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-8-mkdocs-rendering-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 8: 🔴 MkDocs Rendering Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Category 8: 🔴 MkDocs Rendering Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#broken-navigation-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Broken Navigation Items
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orphaned-pages-exist-but-not-in-nav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orphaned Pages (exist but not in nav)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-rendering-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Content Rendering Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-9-documentation-internal-contradictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 9: 🟡 Documentation Internal Contradictions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-10-custom-extensions-probe-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 10: Custom Extensions (Probe API)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommendations-prioritized" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommendations (Prioritized)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommendations (Prioritized)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#p0-fix-immediately-misleading-for-audits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔴 P0 — Fix Immediately (Misleading for Audits)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p1-fix-before-next-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟡 P1 — Fix Before Next Release
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2-improvement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟢 P2 — Improvement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-scorecard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary Scorecard
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="documentation-vs-implementation-gap-analysis-report">Documentation vs Implementation — Gap Analysis Report</h1>
+<blockquote>
+<p><strong>Audit Date</strong>: 2026-02-14<br />
+<strong>Auditor</strong>: Technical Review (AI-Assisted)<br />
+<strong>Scope</strong>: All 27 documentation pages in <code>EsMonitorDocs/docs/</code> vs actual codebase in <code>EsMonitor/</code></p>
+</blockquote>
+<hr />
+<h2 id="executive-summary">Executive Summary</h2>
+<p>The eSolutions Monitoring Platform documentation describes a <strong>Tier 3 enterprise-grade</strong> monitoring system with features like TLS encryption, Active Directory authentication, RabbitMQ message queues, Celery workers, PostgreSQL clusters, Docker deployment, React dashboards, HashiCorp Vault integration, and Collector proxy nodes.</p>
+<p><strong>The actual implementation is a Tier 1 MVP</strong>: a FastAPI + SQLite application with a single-file HTML dashboard, a Python agent using <code>psutil</code>, and a basic JMX bridge. Many documented features do not exist in the codebase.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Category</th>
+<th style="text-align: center;">Documented Features</th>
+<th style="text-align: center;">Actually Implemented</th>
+<th style="text-align: center;">Gap Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Security &amp; Encryption</strong></td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">🔴 100%</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Infrastructure (Collectors, HA, DR)</strong></td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">🔴 100%</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Monitoring Scope</strong></td>
+<td style="text-align: center;">18 metrics/probes</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">🔴 72%</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Dashboard Views</strong></td>
+<td style="text-align: center;">4 dashboards</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">🟡 75%</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Alerting &amp; Notifications</strong></td>
+<td style="text-align: center;">6 channels</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">🟡 83%</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Core Engine Components</strong></td>
+<td style="text-align: center;">7 components</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">🟡 57%</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Deployment &amp; Packaging</strong></td>
+<td style="text-align: center;">6 methods</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">🔴 83%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="category-1-critical-security-hardening-100-gap">Category 1: 🔴 CRITICAL — Security &amp; Hardening (100% Gap)</h2>
+<p><strong>Documentation</strong>: <code>security/hardening.md</code><br />
+<strong>Claims</strong>: TLS 1.3, Active Directory/LDAP authentication, certificate-based agent auth, encrypted vault (<code>esol-vault</code>), least-privilege service accounts.</p>
+<h3 id="findings">Findings</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Documented Feature</th>
+<th style="text-align: left;">Implementation Status</th>
+<th style="text-align: left;">Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">TLS 1.3 encryption in transit</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+<td style="text-align: left;">Core runs plain HTTP on port 8444. No TLS config in <code>run_core.py</code> or <code>main.py</code>. Agent <code>config.json</code> uses <code>http://</code> URLs.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Active Directory / LDAP auth</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+<td style="text-align: left;">No authentication on any API endpoint. Dashboard is public. No auth middleware in <code>main.py</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Certificate-based agent auth</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+<td style="text-align: left;">Agent uses plain HTTP POST with no authentication. No certificate generation or validation code exists.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Encrypted Vault (<code>esol-vault</code>)</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+<td style="text-align: left;">No vault CLI tool. Passwords stored in plaintext in <code>config.yaml</code> and <code>config.json</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>esol_agent</code> / <code>Network Service</code> user</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+<td style="text-align: left;">No service account setup. Agent runs as the executing user.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Risk</strong>: The entire system runs unauthenticated over HTTP. Any network actor can ingest fake metrics, read all alerts, or access the dashboard. This is <strong>misleading for enterprise audit contexts</strong>.</p>
+</blockquote>
+<hr />
+<h2 id="category-2-critical-infrastructure-components-100-gap">Category 2: 🔴 CRITICAL — Infrastructure Components (100% Gap)</h2>
+<h3 id="collectors-documented-in-5-pages-never-built">Collectors (Documented in 5+ pages, Never Built)</h3>
+<p><strong>Documented in</strong>: <code>architecture/overview.md</code>, <code>architecture/components.md</code>, <code>architecture/scaling.md</code>, <code>implementation/workflow.md</code>, <code>implementation/requirements.md</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Documented Feature</th>
+<th style="text-align: left;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">eSolutions Collectors (data concentrators)</td>
+<td style="text-align: left;">❌ <strong>No code exists</strong> — no <code>collector/</code> directory, no collector binary, no collector config</td>
+</tr>
+<tr>
+<td style="text-align: left;">24h data buffering during outages</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Collector-to-Core TLS tunnels</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Collector-per-security-zone deployment</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>The architecture diagram shows <code>Agent → Collector → Core</code>. <strong>In reality, Agents connect directly to Core.</strong> The Collector component is entirely aspirational.</p>
+</blockquote>
+<h3 id="high-availability-disaster-recovery">High Availability &amp; Disaster Recovery</h3>
+<p><strong>Documented in</strong>: <code>maintenance/backup_dr.md</code>, <code>architecture/scaling.md</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Documented Feature</th>
+<th style="text-align: left;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Active/Standby Core failover</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>esol-admin backup</code> CLI utility</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong> — no <code>esol-admin</code> binary exists</td>
+</tr>
+<tr>
+<td style="text-align: left;">S3 backup integration</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">DNS-based DR switchover</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Collector failover (primary/secondary Core IPs)</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong> (Collectors don't exist)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="category-3-major-monitoring-scope-gaps">Category 3: 🟡 MAJOR — Monitoring Scope Gaps</h2>
+<h3 id="os-monitoring-monitoringosmd">OS Monitoring (<code>monitoring/os.md</code>)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Doc Metric Key</th>
+<th style="text-align: left;">Implemented Key</th>
+<th style="text-align: left;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>os.cpu.total_usage_pct</code></td>
+<td style="text-align: left;"><code>os.cpu.usage</code></td>
+<td style="text-align: left;">⚠️ <strong>Key name mismatch</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>os.mem.available_mb</code></td>
+<td style="text-align: left;"><code>os.memory.percent</code> / <code>os.memory.used_mb</code></td>
+<td style="text-align: left;">⚠️ <strong>Different metric</strong> (doc says MB available, code sends % used)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>os.swap.usage_pct</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>os.disk.volume.free_pct</code></td>
+<td style="text-align: left;"><code>os.disk.usage_percent</code></td>
+<td style="text-align: left;">⚠️ <strong>Key name mismatch</strong> and inverted logic (doc says "free %", code sends "used %")</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>os.service.status[name]</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong> — no service monitoring</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>os.log.grep[path, pattern]</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong> — no log tailing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="maximo-monitoring-monitoringmaximomd">Maximo Monitoring (<code>monitoring/maximo.md</code>)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Doc Feature</th>
+<th style="text-align: left;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Synthetic UX probe (<code>ux.scenario.login_flow</code>)</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Cron Task Validator (<code>maximo.cron.stale_count</code>)</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Escalation Engine (<code>maximo.escalation.backlog</code>)</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">UI Reachability (<code>net.http.check</code>) with SSL validation</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">JMX metrics (heap, threads, sessions, cron)</td>
+<td style="text-align: left;">✅ <strong>Partially implemented</strong> — heap + threads work via <code>JmxBridge.jar</code>. Session count (<code>maximo.web.sessions</code>) and cron MBean (<code>maximo.cron.active</code>) not tested/verified.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="websphere-monitoring-monitoringwebspheremd">WebSphere Monitoring (<code>monitoring/websphere.md</code>)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Doc Metric</th>
+<th style="text-align: left;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>ibm.was.jvm.heap.percent_used</code></td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong> — JMX collector uses <code>maximo.jvm.heap.used</code> (different key, raw bytes not %)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ibm.was.jvm.gc.time_spent</code></td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ibm.was.threads.webcontainer.active/max</code></td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ibm.was.jdbc.free_connections</code></td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ibm.was.jdbc.wait_time_ms</code></td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>security.cert.expiry_days</code> (SSL cert probe)</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="db2-monitoring-monitoringdb2md">DB2 Monitoring (<code>monitoring/db2.md</code>)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Doc Metric</th>
+<th style="text-align: left;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>ibm.db2.connections.active</code></td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong> — no DB2 collector code exists</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ibm.db2.locks.deadlocks</code></td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ibm.db2.tablespace.usage_pct</code></td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ibm.db2.logs.primary_usage</code></td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ibm.db2.maintenance.last_backup_age_hours</code></td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>The entire DB2 monitoring module is documented but has zero implementation.</strong> There is no <code>db2.py</code> collector, no <code>ibm_db</code> dependency in <code>requirements.txt</code>, and no DB2-related code anywhere in the codebase.</p>
+</blockquote>
+<hr />
+<h2 id="category-4-major-technology-stack-misrepresentations">Category 4: 🟡 MAJOR — Technology Stack Misrepresentations</h2>
+<p><strong>File</strong>: <code>implementation/technology_stack.md</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Documented Technology</th>
+<th style="text-align: left;">Actual Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Celery + Redis (distributed task queue)</td>
+<td style="text-align: left;">❌ <strong>Not used</strong> — alert evaluation is synchronous in the API request cycle</td>
+</tr>
+<tr>
+<td style="text-align: left;">RabbitMQ 3.12 (message queue)</td>
+<td style="text-align: left;">❌ <strong>Not used</strong> — no queue exists</td>
+</tr>
+<tr>
+<td style="text-align: left;">PostgreSQL 15 (production DB)</td>
+<td style="text-align: left;">❌ <strong>Not used</strong> — SQLite only</td>
+</tr>
+<tr>
+<td style="text-align: left;">TimescaleDB extension</td>
+<td style="text-align: left;">❌ <strong>Not used</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">React 18 + TypeScript + Material-UI (dashboard)</td>
+<td style="text-align: left;">❌ <strong>Not used</strong> — dashboard is a single <code>index.html</code> with Alpine.js + Tailwind CDN</td>
+</tr>
+<tr>
+<td style="text-align: left;">Apache ECharts / Plotly.js (charting)</td>
+<td style="text-align: left;">❌ <strong>Not used</strong> — gauges are hand-coded SVG circles</td>
+</tr>
+<tr>
+<td style="text-align: left;">WebSockets (<code>/ws/realtime</code>)</td>
+<td style="text-align: left;">❌ <strong>Not used</strong> — dashboard polls REST API every 5s</td>
+</tr>
+<tr>
+<td style="text-align: left;">OAuth2 / SAML 2.0 auth</td>
+<td style="text-align: left;">❌ <strong>Not used</strong> — no authentication</td>
+</tr>
+<tr>
+<td style="text-align: left;">Docker deployment</td>
+<td style="text-align: left;">❌ <strong>Not used</strong> — PyInstaller EXE packaging only</td>
+</tr>
+<tr>
+<td style="text-align: left;">HashiCorp Vault</td>
+<td style="text-align: left;">❌ <strong>Not used</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>cryptography</code> library (TLS)</td>
+<td style="text-align: left;">❌ <strong>Not in requirements.txt</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ibm_db</code> (DB2 driver)</td>
+<td style="text-align: left;">❌ <strong>Not in requirements.txt</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>jpype1</code> (Java bridge)</td>
+<td style="text-align: left;">❌ <strong>Not used</strong> — subprocess calls to <code>java -jar</code> instead</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>pywin32</code> / <code>wmi</code> (Windows probes)</td>
+<td style="text-align: left;">❌ <strong>Not used</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">JSON Schema config validation</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="actual-dependencies-requirementstxt">Actual Dependencies (<code>requirements.txt</code>)</h3>
+<div class="highlight"><pre><span></span><code>fastapi
+uvicorn[standard]
+sqlalchemy
+pydantic
+pyyaml
+psutil
+requests
+</code></pre></div>
+<blockquote>
+<p>The documented tech stack describes an enterprise platform with 15+ dependencies. The actual <code>requirements.txt</code> has <strong>7 packages</strong>. The gap is extreme.</p>
+</blockquote>
+<hr />
+<h2 id="category-5-major-dashboard-gaps">Category 5: 🟡 MAJOR — Dashboard Gaps</h2>
+<p><strong>File</strong>: <code>platform_config/dashboards.md</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Dashboard</th>
+<th style="text-align: left;">Doc Status</th>
+<th style="text-align: left;">Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">DASH-001: Operations Dashboard</td>
+<td style="text-align: left;">✅ Documented as implemented</td>
+<td style="text-align: left;">✅ <strong>Actually implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">DASH-002: Executive / CIO View</td>
+<td style="text-align: left;">🔴 Documented as planned</td>
+<td style="text-align: left;">❌ Not implemented</td>
+</tr>
+<tr>
+<td style="text-align: left;">DASH-003: NOC Operations Center</td>
+<td style="text-align: left;">🔴 Documented as planned</td>
+<td style="text-align: left;">❌ Not implemented</td>
+</tr>
+<tr>
+<td style="text-align: left;">DASH-004: Engineer / SRE View</td>
+<td style="text-align: left;">🔴 Documented as planned</td>
+<td style="text-align: left;">❌ Not implemented</td>
+</tr>
+<tr>
+<td style="text-align: left;">DASH-005: Host Drill-Down</td>
+<td style="text-align: left;">✅ Documented as implemented</td>
+<td style="text-align: left;">✅ <strong>Actually implemented</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>DASH-001 and DASH-005 documentation is <strong>accurate</strong> and matches the implementation. This is the strongest alignment in the entire project.</p>
+</blockquote>
+<hr />
+<h2 id="category-6-major-alerting-gaps">Category 6: 🟡 MAJOR — Alerting Gaps</h2>
+<p><strong>File</strong>: <code>operations/alerting.md</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Severity model (info/warning/critical/very_critical)</td>
+<td style="text-align: left;">✅ <strong>Implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Default alert rules (CPU, Memory, Disk)</td>
+<td style="text-align: left;">✅ <strong>Implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Email notifications (SMTP) for very_critical</td>
+<td style="text-align: left;">✅ <strong>Implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Microsoft Teams Webhooks</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong> (correctly marked 🔴 in docs)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Escalation Chain (SMS at T+15m, Manager at T+60m)</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong> (correctly marked 🔴)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Work Hours routing</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong> (correctly marked 🔴)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alert Acknowledgment</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong> (correctly marked 🔴)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Positive</strong>: The <code>operations/alerting.md</code> page is the <strong>best-documented page</strong> in the project. It clearly marks planned vs. implemented features. This pattern should be replicated across all other pages.</p>
+</blockquote>
+<hr />
+<h2 id="category-7-metric-key-inconsistencies">Category 7: 🟡 Metric Key Inconsistencies</h2>
+<p>The documentation uses different metric key names than the actual code:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Location</th>
+<th style="text-align: left;">Doc Key</th>
+<th style="text-align: left;">Code Key</th>
+<th style="text-align: left;">Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>monitoring/os.md</code></td>
+<td style="text-align: left;"><code>os.cpu.total_usage_pct</code></td>
+<td style="text-align: left;"><code>os.cpu.usage</code></td>
+<td style="text-align: left;">Alert rules reference code key, not doc key</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>monitoring/os.md</code></td>
+<td style="text-align: left;"><code>os.mem.available_mb</code></td>
+<td style="text-align: left;"><code>os.memory.percent</code></td>
+<td style="text-align: left;">Completely different metric (MB vs %)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>monitoring/os.md</code></td>
+<td style="text-align: left;"><code>os.disk.volume.free_pct</code></td>
+<td style="text-align: left;"><code>os.disk.usage_percent</code></td>
+<td style="text-align: left;">Inverted: "free" vs "used"</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>getting_started.md</code></td>
+<td style="text-align: left;"><code>os.memory.usage_percent</code></td>
+<td style="text-align: left;"><code>os.memory.percent</code></td>
+<td style="text-align: left;">Code example differs from implementation</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>monitoring/websphere.md</code></td>
+<td style="text-align: left;"><code>ibm.was.jvm.heap.percent_used</code></td>
+<td style="text-align: left;"><code>maximo.jvm.heap.used</code></td>
+<td style="text-align: left;">Different namespace and unit</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>operations/alerting.md</code></td>
+<td style="text-align: left;"><code>os.memory.percent</code></td>
+<td style="text-align: left;"><code>os.memory.percent</code></td>
+<td style="text-align: left;">✅ <strong>Correct</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>operations/alerting.md</code></td>
+<td style="text-align: left;"><code>os.cpu.usage</code></td>
+<td style="text-align: left;"><code>os.cpu.usage</code></td>
+<td style="text-align: left;">✅ <strong>Correct</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="category-8-mkdocs-rendering-issues">Category 8: 🔴 MkDocs Rendering Issues</h2>
+<h3 id="broken-navigation-items">Broken Navigation Items</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Nav Entry</th>
+<th style="text-align: left;">File Referenced</th>
+<th style="text-align: left;">Issue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Documentation Alignment &gt; Implementation Gap</code></td>
+<td style="text-align: left;"><code>tooling/implementation_gap.yaml</code></td>
+<td style="text-align: left;">⚠️ <strong>YAML file</strong> — MkDocs cannot render <code>.yaml</code> as a documentation page. Clicking this link will fail or show raw YAML.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Documentation Alignment &gt; Tooling Overview</code></td>
+<td style="text-align: left;"><code>tooling/index.md</code></td>
+<td style="text-align: left;">⚠️ Links to <code>mcp-server/tools/gap_tracker.py</code> which is a <strong>relative path from a different directory</strong> — link will 404.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="orphaned-pages-exist-but-not-in-nav">Orphaned Pages (exist but not in nav)</h3>
+<p>The <code>docs/installation/</code> directory contains 3 pages not listed in <code>mkdocs.yml</code>:
+- <code>installation/core.md</code>
+- <code>installation/agents.md</code>
+- <code>installation/collectors.md</code></p>
+<p>These are <strong>inaccessible through navigation</strong> — users cannot find them unless they know the URL.</p>
+<h3 id="content-rendering-issues">Content Rendering Issues</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Page</th>
+<th style="text-align: left;">Issue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>operations/runbook.md</code></td>
+<td style="text-align: left;">Uses MkDocs <code>===</code> tabbed content syntax (<code>=== "Maximo / WebSphere (Linux)"</code>) — requires <code>pymdownx.tabbed</code> extension which is <strong>not configured</strong> in <code>mkdocs.yml</code>. Tabs will render as plain text.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>architecture/scaling.md</code></td>
+<td style="text-align: left;">Uses Mermaid diagrams (<code>mermaid</code> code blocks) — requires <code>pymdownx.superfences</code> with Mermaid plugin which is <strong>not configured</strong> in <code>mkdocs.yml</code>. Diagrams will render as code blocks.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="category-9-documentation-internal-contradictions">Category 9: 🟡 Documentation Internal Contradictions</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Page A</th>
+<th style="text-align: left;">Says</th>
+<th style="text-align: left;">Page B</th>
+<th style="text-align: left;">Says</th>
+<th style="text-align: left;">Conflict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>getting_started.md</code> L9</td>
+<td style="text-align: left;">"PostgreSQL 15+" required</td>
+<td style="text-align: left;"><code>getting_started.md</code> L23</td>
+<td style="text-align: left;">"SQLite for zero-config"</td>
+<td style="text-align: left;"><strong>Same page contradicts itself</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>getting_started.md</code> L20</td>
+<td style="text-align: left;">"Node.js 18+ for dashboard"</td>
+<td style="text-align: left;">Actual dashboard</td>
+<td style="text-align: left;">Single HTML file, no Node.js</td>
+<td style="text-align: left;">Node.js is not needed</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>getting_started.md</code> L39-41</td>
+<td style="text-align: left;"><code>web/backend/</code> + <code>web/frontend/</code> (React)</td>
+<td style="text-align: left;">Actual structure</td>
+<td style="text-align: left;"><code>core/web/static/index.html</code></td>
+<td style="text-align: left;">Project structure is wrong</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>architecture/components.md</code> L9</td>
+<td style="text-align: left;">"PostgreSQL (recommended) or MySQL"</td>
+<td style="text-align: left;"><code>core/config.yaml</code></td>
+<td style="text-align: left;">SQLite only</td>
+<td style="text-align: left;">Database choice misrepresented</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>architecture/components.md</code> L26</td>
+<td style="text-align: left;">"internal Go runtime"</td>
+<td style="text-align: left;">All code</td>
+<td style="text-align: left;">Python 3.11</td>
+<td style="text-align: left;"><strong>Language is completely wrong</strong> — docs say Go, code is Python</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>architecture/compatibility.md</code> L20</td>
+<td style="text-align: left;">"AIX 7.1, 7.2 PowerPC binaries"</td>
+<td style="text-align: left;">Agent code</td>
+<td style="text-align: left;">Python + psutil (no AIX support)</td>
+<td style="text-align: left;">AIX is not supported</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>architecture/compatibility.md</code> L17</td>
+<td style="text-align: left;">"MSI Installer available"</td>
+<td style="text-align: left;">Actual packaging</td>
+<td style="text-align: left;">PyInstaller <code>.exe</code></td>
+<td style="text-align: left;">No MSI installer exists</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>implementation/technology_stack.md</code> L33</td>
+<td style="text-align: left;">"React 18 + TypeScript + Material-UI"</td>
+<td style="text-align: left;">Dashboard</td>
+<td style="text-align: left;">Alpine.js + Tailwind CDN</td>
+<td style="text-align: left;">Completely different stack</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>implementation/requirements.md</code> L6</td>
+<td style="text-align: left;">"proprietary encrypted protocol"</td>
+<td style="text-align: left;">Agent transport</td>
+<td style="text-align: left;">Plain HTTP JSON POST</td>
+<td style="text-align: left;">No proprietary protocol exists</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>platform_config/metrics.md</code> L25-33</td>
+<td style="text-align: left;">"Hysteresis with recovery delta"</td>
+<td style="text-align: left;">Alert engine code</td>
+<td style="text-align: left;">Simple threshold comparison</td>
+<td style="text-align: left;">No hysteresis implemented</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="category-10-custom-extensions-probe-api">Category 10: Custom Extensions (Probe API)</h2>
+<p><strong>File</strong>: <code>custom_monitoring/scripts.md</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Probe Extension API</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong> — no <code>probes</code> section parsing in agent code</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>agent_config.json</code> probes section</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong> — <code>config.json</code> has no <code>probes</code> key</td>
+</tr>
+<tr>
+<td style="text-align: left;">PowerShell script execution</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Bash script execution</td>
+<td style="text-align: left;">❌ <strong>Not implemented</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="recommendations-prioritized">Recommendations (Prioritized)</h2>
+<h3 id="p0-fix-immediately-misleading-for-audits">🔴 P0 — Fix Immediately (Misleading for Audits)</h3>
+<ol>
+<li>
+<p><strong><code>security/hardening.md</code></strong>: Rewrite entirely. Add a clear "Current Status" section stating that TLS, authentication, and vault are <strong>not yet implemented</strong>. A client or auditor reading this page would believe the system is secure — it is not.</p>
+</li>
+<li>
+<p><strong><code>architecture/components.md</code> L26</strong>: Remove "internal Go runtime" — the platform is Python. This is factually incorrect.</p>
+</li>
+<li>
+<p><strong><code>implementation/technology_stack.md</code></strong>: Add a "Current State" vs "Target Architecture" split. The page currently presents aspirational tech (Celery, RabbitMQ, React, Redis) as if it exists.</p>
+</li>
+<li>
+<p><strong><code>getting_started.md</code> L9, L20, L39-41</strong>: Remove PostgreSQL and Node.js prerequisites. Fix the project structure diagram to match reality.</p>
+</li>
+</ol>
+<h3 id="p1-fix-before-next-release">🟡 P1 — Fix Before Next Release</h3>
+<ol>
+<li>
+<p><strong><code>monitoring/os.md</code></strong>: Update metric keys to match the actual code (<code>os.cpu.usage</code>, <code>os.memory.percent</code>, <code>os.disk.usage_percent</code>).</p>
+</li>
+<li>
+<p><strong><code>monitoring/db2.md</code></strong> and <strong><code>monitoring/websphere.md</code></strong>: Add clear "🔴 Not Implemented" status markers to every metric, following the pattern used in <code>operations/alerting.md</code>.</p>
+</li>
+<li>
+<p><strong><code>mkdocs.yml</code></strong>: </p>
+</li>
+<li>Add <code>pymdownx.tabbed</code> and <code>pymdownx.superfences</code> extensions for tab and mermaid rendering.</li>
+<li>Change <code>tooling/implementation_gap.yaml</code> nav entry to link to the <code>tooling/index.md</code> page instead.</li>
+<li>
+<p>Add the 3 orphaned <code>installation/*.md</code> pages to the nav.</p>
+</li>
+<li>
+<p><strong><code>maintenance/backup_dr.md</code></strong>: Mark all content as "Planned" — the <code>esol-admin</code> tool and S3 backup do not exist.</p>
+</li>
+</ol>
+<h3 id="p2-improvement">🟢 P2 — Improvement</h3>
+<ol>
+<li>
+<p><strong>Adopt the <code>alerting.md</code> pattern everywhere</strong>: Every page should have a "Implemented ✅ / Planned 🔴" status column. This page is the gold standard.</p>
+</li>
+<li>
+<p><strong><code>implementation/python_guide.md</code></strong>: Update code examples to match actual <code>core/api/main.py</code>, <code>core/engine/alerts.py</code>, and <code>agent/agent.py</code>. The documented code examples use classes and patterns (e.g., <code>MetricsEngine</code>, async/await, <code>CollectorClient</code>) that do not exist.</p>
+</li>
+</ol>
+<hr />
+<h2 id="summary-scorecard">Summary Scorecard</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Documentation Area</th>
+<th style="text-align: center;">Accuracy Score</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>operations/alerting.md</code></td>
+<td style="text-align: center;"><strong>9/10</strong></td>
+<td style="text-align: left;">✅ Best page. Honest status markers.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>platform_config/dashboards.md</code></td>
+<td style="text-align: center;"><strong>8/10</strong></td>
+<td style="text-align: left;">✅ Good. Clear "Planned" section.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>deployment_guide.md</code></td>
+<td style="text-align: center;"><strong>7/10</strong></td>
+<td style="text-align: left;">✅ Mostly accurate for Tier 1 MVP.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>getting_started.md</code></td>
+<td style="text-align: center;"><strong>5/10</strong></td>
+<td style="text-align: left;">⚠️ Contradictions (PostgreSQL vs SQLite).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>monitoring/maximo.md</code></td>
+<td style="text-align: center;"><strong>4/10</strong></td>
+<td style="text-align: left;">⚠️ JMX partially works. Synthetic probes don't.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>architecture/overview.md</code></td>
+<td style="text-align: center;"><strong>3/10</strong></td>
+<td style="text-align: left;">🔴 Collectors don't exist. Network flow is wrong.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>security/hardening.md</code></td>
+<td style="text-align: center;"><strong>1/10</strong></td>
+<td style="text-align: left;">🔴 Nothing described is implemented.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>implementation/technology_stack.md</code></td>
+<td style="text-align: center;"><strong>1/10</strong></td>
+<td style="text-align: left;">🔴 Almost entirely aspirational.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>implementation/python_guide.md</code></td>
+<td style="text-align: center;"><strong>1/10</strong></td>
+<td style="text-align: left;">🔴 Code examples don't match any real file.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>architecture/compatibility.md</code></td>
+<td style="text-align: center;"><strong>2/10</strong></td>
+<td style="text-align: left;">🔴 Claims AIX, RPM, DEB, MSI, Go runtime — none exist.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>maintenance/backup_dr.md</code></td>
+<td style="text-align: center;"><strong>1/10</strong></td>
+<td style="text-align: left;">🔴 Entire page is fiction.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>monitoring/db2.md</code></td>
+<td style="text-align: center;"><strong>0/10</strong></td>
+<td style="text-align: left;">🔴 Zero implementation. No code, no driver.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>monitoring/websphere.md</code></td>
+<td style="text-align: center;"><strong>1/10</strong></td>
+<td style="text-align: left;">🔴 Metric keys don't match. Most not collected.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Overall Documentation Accuracy: ~30%</strong><br />
+Only 3 of 27 pages can be considered reliable.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
